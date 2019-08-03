@@ -30,7 +30,7 @@ public class EndStateController : MonoBehaviour
         {
 
             Destroy(other.gameObject);
-            ShowMessage("You win!  Press Enter to continue...");
+            ShowMessage("You win!  Click to continue...");
 
         }
         
