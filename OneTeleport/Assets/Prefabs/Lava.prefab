@@ -94,8 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ebd9b3040dfda34fb9cc3e06da15408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endStateController: {fileID: 8222128111660055769, guid: 42d3c76aa325c4240a5f1a3acf79a097,
-    type: 3}
+  endStateController: {fileID: 0}
 --- !u!61 &4479711924333372844
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -27,6 +27,13 @@ public class IcicleController : MonoBehaviour
             Destroy(other.gameObject);
             endStateController.FailLevel();
         }
+        var icicleSpeed = GetComponent<Rigidbody2D>().velocity;
+
+        if (icicleSpeed.y != 0 && other.name != "Drone")
+        {
+            Destroy(gameObject);
+        }
+            
 
     }
 }
