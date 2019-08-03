@@ -25,6 +25,11 @@ public class EndStateController : MonoBehaviour
         {
             SceneManager.LoadScene("EndLevel");
         }
+
+        if (Input.GetMouseButton(0) & levelFailed == true)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     //enter the gate directly to win!
