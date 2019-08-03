@@ -122,4 +122,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endgameText: {fileID: 0}
   levelComplete: 0
-  levelFailed: 0
+  levelFailed: 1

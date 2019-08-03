@@ -27,6 +27,7 @@ public class IcicleController : MonoBehaviour
             Destroy(other.gameObject);
             endStateController.FailLevel();
         }
+        Destroy(gameObject);
 
     }
 }
