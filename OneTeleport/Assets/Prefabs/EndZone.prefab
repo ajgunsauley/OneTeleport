@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8222128111660055770}
   - component: {fileID: 8222128111660055768}
   - component: {fileID: 8222128111660055769}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EndZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,3 +122,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endgameText: {fileID: 0}
   levelComplete: 0
+  levelFailed: 0

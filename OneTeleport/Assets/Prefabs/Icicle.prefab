@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5041619123812264950}
   - component: {fileID: 5041619123812264949}
   - component: {fileID: 5041619123812264951}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Icicle
-  m_TagString: Untagged
+  m_TagString: Swappable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,4 +142,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2756b038ae87c4d40b01db77da23d339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endStateController: {fileID: 0}
+  endStateController: {fileID: 8222128111660055769, guid: 42d3c76aa325c4240a5f1a3acf79a097,
+    type: 3}
