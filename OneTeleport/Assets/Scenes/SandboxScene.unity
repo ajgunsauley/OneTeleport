@@ -314,6 +314,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lava
       objectReference: {fileID: 0}
+    - target: {fileID: 4479711924333372843, guid: 3b0dd4feb843e584595ad8cba518b590,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4479711924333372845, guid: 3b0dd4feb843e584595ad8cba518b590,
         type: 3}
       propertyPath: m_LocalPosition.x
