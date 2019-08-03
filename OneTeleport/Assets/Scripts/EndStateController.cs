@@ -30,6 +30,10 @@ public class EndStateController : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        if (Input.GetKey(KeyCode.R)) {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     //enter the gate directly to win!
