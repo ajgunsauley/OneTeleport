@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 1040099304}
   - component: {fileID: 1040099305}
   - component: {fileID: 1040099306}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: DroneRoof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1077,7 +1077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1178722679, guid: e50b5a6b1135bfc4d9bf4ced2ebf0564, type: 3}
       propertyPath: rayIntersectLayers.m_Bits
-      value: 768
+      value: 1280
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e50b5a6b1135bfc4d9bf4ced2ebf0564, type: 3}
