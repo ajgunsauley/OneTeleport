@@ -16,7 +16,6 @@ public class DroneController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        // Debug.Log(rbody.velocity);
         if (!switched && rbody.velocity.sqrMagnitude < speed * speed * .99f) {
             switched = true;
             RotateDrone();
