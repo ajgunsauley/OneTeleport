@@ -50,6 +50,8 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
             // Hitting a crate/drone
             else if (other.name == "Crate" || other.name == "Drone")
                 Destroy(other.gameObject);
+            else
+                Destroy(gameObject);
         } else {
             // Being hit by a drone
             if (other.name == "Drone")
