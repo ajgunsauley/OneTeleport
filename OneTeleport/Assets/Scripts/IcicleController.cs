@@ -44,7 +44,7 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
         if (isFalling) {
             // Hitting poor chunky boy
             if (other.name == "Hero") {
-                Destroy(other.gameObject);
+                other.GetComponent<HeroController>().Die(false);
                 endStateController.FailLevel();
             }
             // Hitting a crate/drone
