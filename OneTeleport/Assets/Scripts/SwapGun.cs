@@ -45,6 +45,9 @@ public class SwapGun : MonoBehaviour {
                 Vector3 tmpPosition = transform.position;
                 transform.position = swapObject.position;
                 swapObject.position = tmpPosition;
+
+                ISwapResponder sr = swapObject.GetComponent<ISwapResponder>();
+                if (sr != null) sr.Swapped();
             }
         }
     }

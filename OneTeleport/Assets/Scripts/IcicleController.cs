@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class IcicleController : MonoBehaviour
-{
+public class IcicleController : MonoBehaviour, ISwapResponder {
     //public UIController UI;
     public EndStateController endStateController;
     public LayerMask rayFallingMask;
@@ -14,23 +13,26 @@ public class IcicleController : MonoBehaviour
     private Rigidbody2D rbody;
     private bool isFalling;
     private float fallingTimer;
+    private bool wasSwapped;
 
     // Start is called before the first frame update
-    void Start()
-    {
+    void Start() {
         rbody = GetComponent<Rigidbody2D>();
         isFalling = false;
         fallingTimer = 0f;
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
+        // Once the player swapped with the icicle, it can't fall any further
+        if (wasSwapped)
+            return;
+
         if (isFalling == false) {
             if (fallingTimer == 0f) {
-                RaycastHit2D hit = Physics2D.Raycast(transform.position + 1f * Vector3.down, Vector2.down, 100f, rayFallingMask);
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 100f, rayFallingMask);
                 if (hit && hit.transform.name == "ChunkyBoy")
-                        fallingTimer = Time.time + gigglingTime;
+                    fallingTimer = Time.time + gigglingTime;
             } else if (Time.time >= fallingTimer) {
                 isFalling = true;
                 rbody.gravityScale = fallingGravity;
@@ -38,20 +40,27 @@ public class IcicleController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.name == "ChunkyBoy")
-        {
-            Destroy(other.gameObject);
-            endStateController.FailLevel();
+    void OnTriggerEnter2D(Collider2D other) {
+        if (isFalling) {
+            // Hitting poor chunky boy
+            if (other.name == "ChunkyBoy") {
+                Destroy(other.gameObject);
+                endStateController.FailLevel();
+            }
+            // Hitting a crate/drone
+            else if (other.name == "Crate" || other.name == "Drone")
+                Destroy(other.gameObject);
+        } else {
+            // Being hit by a drone
+            if (other.name == "Drone")
+                Destroy(gameObject);
         }
+    }
 
-        if (other.name == "Crate" || other.name == "Drone")
-            Destroy(other.gameObject);
-
-        if (rbody.velocity.y != 0f)
-        {
-            Destroy(gameObject);
-        }
+    public void Swapped() {
+        //rbody.gravityScale = 4;
+        Debug.Log("I SWAPPED!");
+        isFalling = false;
+        wasSwapped = true;
     }
 }
