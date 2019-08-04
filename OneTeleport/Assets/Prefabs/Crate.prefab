@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2966608842434464918}
   - component: {fileID: 2966608842434464915}
   - component: {fileID: -4299639181193770765}
+  - component: {fileID: 801387707006698917}
   m_Layer: 8
   m_Name: Crate
   m_TagString: Swappable
@@ -143,6 +144,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7dcd59be7d55c540bfd88b96fccbbca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &801387707006698917
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2966608842434464919}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 24dd35c9ed36c41c58f361cfd5d8cfd0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6577028636872675705
 GameObject:
   m_ObjectHideFlags: 0

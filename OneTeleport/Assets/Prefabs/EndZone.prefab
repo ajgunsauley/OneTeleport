@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8222128111660055770}
   - component: {fileID: 8222128111660055768}
   - component: {fileID: 795817539}
+  - component: {fileID: 8163721542968778927}
   m_Layer: 8
   m_Name: EndZone
   m_TagString: Untagged
@@ -123,3 +124,22 @@ MonoBehaviour:
   endgameText: {fileID: 0}
   levelComplete: 0
   levelFailed: 0
+--- !u!95 &8163721542968778927
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8222128111660055717}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2e2617f557d6448ea2d1b24f02f00e2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
