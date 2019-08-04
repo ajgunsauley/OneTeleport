@@ -47,7 +47,7 @@ public class SwapGun : MonoBehaviour {
                 swapObject.position = tmpPosition;
 
                 ISwapResponder sr = swapObject.GetComponent<ISwapResponder>();
-                if (sr != null) sr.Swapped();
+                if (sr != null) sr.Swapped(gameObject);
             }
         }
     }
