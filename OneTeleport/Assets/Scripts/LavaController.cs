@@ -20,7 +20,18 @@ public class LavaController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(other.gameObject);
+        if (other.name != "Icicle")
+        {
+            Destroy(other.gameObject);
+        }
+        if (other.name == "Icicle")
+        {
+            var rbody = other.GetComponent<Rigidbody2D>();
+            if (rbody.velocity.y != 0)
+            {
+                Destroy(other.gameObject);
+            }
+        }
         if (other.name == "Hero")
         {
             endStateController.FailLevel();
