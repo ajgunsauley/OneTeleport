@@ -277,8 +277,9 @@ GameObject:
   - component: {fileID: 8220278526624827951}
   - component: {fileID: 8220278526624827948}
   - component: {fileID: 1178722679}
+  - component: {fileID: 794202938}
   m_Layer: 9
-  m_Name: ChunkyBoy
+  m_Name: Hero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,7 +317,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 4
+  m_GravityScale: 1
   m_Material: {fileID: 6200000, guid: 8441e957643267a469c33020288258ec, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -362,4 +363,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayIntersectLayers:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 1280
+--- !u!114 &794202938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8220278526624827944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f49056aa5984e043b923a68c9ab237b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
