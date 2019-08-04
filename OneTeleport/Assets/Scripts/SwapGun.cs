@@ -29,7 +29,7 @@ public class SwapGun : MonoBehaviour {
         rayLine.SetPosition(1, transform.position);
 
         if (aimDirection.sqrMagnitude > 0.25) {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, aimDirection, 100f, rayIntersectLayers.value);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, aimDirection, 100f, rayIntersectLayers);
 
             if (hit) {
                 swapObject = hit.transform;
