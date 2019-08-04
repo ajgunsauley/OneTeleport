@@ -51,11 +51,11 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
             else if (other.name == "Crate" || other.name == "Drone")
                 Destroy(other.gameObject);
             else
-                Destroy(gameObject);
+                Break();
         } else {
             // Being hit by a drone
             if (other.name == "Drone")
-                Destroy(gameObject);
+                Break();
         }
     }
 
@@ -68,5 +68,14 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
         }
         fallingTimer = 0f;
         wasSwapped = true;
+    }
+
+    public void Break() {
+        GetComponent<AudioSource>().Play();
+        GetComponentInChildren<SpriteRenderer>().enabled = false;
+        foreach (var col in GetComponentsInChildren<Collider2D>())
+            col.enabled = false;
+
+        Destroy(gameObject, 1f);
     }
 }
