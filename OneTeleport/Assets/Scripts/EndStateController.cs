@@ -42,7 +42,7 @@ public class EndStateController : MonoBehaviour
         if (other.name == "Hero")
         {
 
-            Destroy(other.gameObject);
+            other.GetComponent<HeroController>().Win();
             ShowMessage(endgameText, "You win!  Click to continue...");
             levelComplete = true;
 
