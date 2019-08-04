@@ -34,6 +34,7 @@ public class LavaController : MonoBehaviour
         }
         if (other.name == "Hero")
         {
+            other.GetComponent<HeroController>().Die(true);
             endStateController.FailLevel();
         }
 
