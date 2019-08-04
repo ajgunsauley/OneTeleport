@@ -2,30 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DroneController : MonoBehaviour
-{
-    Rigidbody2D rigidbody2d;
+public class DroneController : MonoBehaviour {
+    Rigidbody2D rbody;
+    public float speed = 1f;
+
+    private Vector2 direction = Vector2.right;
+    private bool switched = true;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    void Start() {
+        rbody = GetComponent<Rigidbody2D>();
+        rbody.velocity = speed * direction;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void FixedUpdate() {
+        // Debug.Log(rbody.velocity);
+        if (!switched && rbody.velocity.sqrMagnitude < speed * speed * .99f) {
+            switched = true;
+            RotateDrone();
+        } else {
+            switched = false;
+        }
+
+        rbody.velocity = speed * direction;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
+    void OnTriggerEnter2D(Collider2D other) {
         //if icicle is not moving, drone kills it and then flips direction
-        if (other.name == "Icicle")
-        {
+        if (other.name == "Icicle") {
             var icicleSpeed = other.GetComponent<Rigidbody2D>().velocity;
-            if (icicleSpeed.y == 0)
-            {
+            if (icicleSpeed.y == 0) {
                 Destroy(other.gameObject);
                 RotateDrone();
             }
@@ -33,9 +39,10 @@ public class DroneController : MonoBehaviour
 
     }
 
-    //nothing lives here yet
-    void RotateDrone()
-    {
-
+    void RotateDrone() {
+        if (direction == Vector2.right)
+            direction = Vector2.left;
+        else
+            direction = Vector2.right;
     }
 }
