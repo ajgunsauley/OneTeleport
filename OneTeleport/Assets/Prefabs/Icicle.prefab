@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 5041619123812264951}
   - component: {fileID: 7129101541661830411}
   - component: {fileID: 5769613042452494752}
+  - component: {fileID: 5563748354698536531}
   m_Layer: 8
   m_Name: Icicle
   m_TagString: Swappable
@@ -203,3 +204,22 @@ EdgeCollider2D:
   - {x: 0.2952423, y: -0.8294227}
   - {x: 0.27677274, y: -0.1421051}
   - {x: 0.5, y: 0.4966135}
+--- !u!95 &5563748354698536531
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5041619123812264714}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eca001616c4c44cdf9942f6ebc8b65d2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

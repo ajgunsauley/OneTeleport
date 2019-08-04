@@ -59,8 +59,14 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
         }
     }
 
-    public void Swapped() {
-        isFalling = false;
+    public void Swapped(GameObject hero) {
+        Debug.Log(hero.GetComponent<Rigidbody2D>().velocity);
+        bool heroIsFalling = hero.GetComponent<Rigidbody2D>().velocity.y < 0;
+        if (heroIsFalling) {
+            isFalling = true;
+            rbody.gravityScale = fallingGravity;
+        }
+        fallingTimer = 0f;
         wasSwapped = true;
     }
 }
