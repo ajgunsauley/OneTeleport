@@ -23,7 +23,6 @@ public class LavaController : MonoBehaviour
         Destroy(other.gameObject);
         if (other.name == "Hero")
         {
-            
             endStateController.FailLevel();
         }
 
