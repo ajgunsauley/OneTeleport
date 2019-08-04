@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RealLevels/07Tunnels.unity
     guid: 358e98179f083494bb04f44d7c5b420a
+  - enabled: 1
+    path: Assets/Scenes/RealLevels/08DroneIntro.unity
+    guid: 276a72d9cf89ba345bc5a56c32f573a7
   m_configObjects: {}
