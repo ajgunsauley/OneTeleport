@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RealLevels/08DroneIntro.unity
     guid: 276a72d9cf89ba345bc5a56c32f573a7
+  - enabled: 1
+    path: Assets/Scenes/RealLevels/09MyDroneDied.unity
+    guid: 2033e2577fcf03e4bb6174e77e5edd75
   m_configObjects: {}
