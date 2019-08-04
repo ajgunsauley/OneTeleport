@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RealLevels/10FastIcicles.unity
     guid: 920f224dfbeb40144b6311c6defea416
+  - enabled: 1
+    path: Assets/Scenes/RealLevels/11BringOnTheLava.unity
+    guid: 721b780a58ea0e84985ecf1fd13b75f3
   m_configObjects: {}
