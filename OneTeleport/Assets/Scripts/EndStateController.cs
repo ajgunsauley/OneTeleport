@@ -23,7 +23,11 @@ public class EndStateController : MonoBehaviour
         //We will need to edit how this works depending on how many levels we have.  Probably an input array
         if (Input.GetMouseButton(0) & levelComplete == true)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            // Clear music for the next level
+			GameObject music = GameObject.FindGameObjectWithTag("Music");
+            if (music) Destroy(music.gameObject);
+
+			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
         if (Input.GetMouseButton(0) & levelFailed == true)
