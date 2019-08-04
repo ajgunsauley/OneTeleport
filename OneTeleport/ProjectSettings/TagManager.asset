@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Swappable
   - ButtonTrigger
+  - Music
   layers:
   - Default
   - TransparentFX
