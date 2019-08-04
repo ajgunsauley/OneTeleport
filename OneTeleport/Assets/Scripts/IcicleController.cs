@@ -31,7 +31,7 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
         if (isFalling == false) {
             if (fallingTimer == 0f) {
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 100f, rayFallingMask);
-                if (hit && hit.transform.name == "ChunkyBoy")
+                if (hit && hit.transform.name == "Hero")
                     fallingTimer = Time.time + gigglingTime;
             } else if (Time.time >= fallingTimer) {
                 isFalling = true;
@@ -43,7 +43,7 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
     void OnTriggerEnter2D(Collider2D other) {
         if (isFalling) {
             // Hitting poor chunky boy
-            if (other.name == "ChunkyBoy") {
+            if (other.name == "Hero") {
                 Destroy(other.gameObject);
                 endStateController.FailLevel();
             }
@@ -58,8 +58,6 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
     }
 
     public void Swapped() {
-        //rbody.gravityScale = 4;
-        Debug.Log("I SWAPPED!");
         isFalling = false;
         wasSwapped = true;
     }
