@@ -7,7 +7,7 @@ public class DroneController : MonoBehaviour {
     public float speed = 1f;
 
     private Vector2 direction = Vector2.right;
-    private bool switched = true;
+    private bool switched;
 
     private AudioSource pushSound;
 
@@ -32,10 +32,10 @@ public class DroneController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other) {
         //if icicle is not moving, drone kills it and then flips direction
-        if (other.name == "Icicle") {
-            var icicleSpeed = other.GetComponent<Rigidbody2D>().velocity;
+        if (other.transform.name == "Icicle") {
+            Vector2 icicleSpeed = other.attachedRigidbody.velocity;
             if (icicleSpeed.y == 0) {
-                Destroy(other.gameObject);
+                other.GetComponent<IcicleController>().Break();
                 RotateDrone();
             }
         }
