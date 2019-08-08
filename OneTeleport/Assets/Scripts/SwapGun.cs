@@ -8,7 +8,8 @@ public class SwapGun : MonoBehaviour {
     private Rigidbody2D rbody;
     private LineRenderer rayLine;
 
-    private Transform swapObject;
+    private Rigidbody2D swapObject;
+    private bool doSwap;
 
     // Start is called before the first frame update
     void Start() {
@@ -32,7 +33,7 @@ public class SwapGun : MonoBehaviour {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, aimDirection, 100f, rayIntersectLayers);
 
             if (hit) {
-                swapObject = hit.transform;
+                swapObject = hit.transform.CompareTag("Swappable") ? hit.rigidbody : null;
                 rayLine.SetPosition(1, hit.point);
             } else {
                 swapObject = null;
@@ -40,15 +41,22 @@ public class SwapGun : MonoBehaviour {
             }
         }
 
-        if (Input.GetMouseButtonDown(0) && swapObject != null) {
-            if (swapObject.CompareTag("Swappable")) {
-                Vector3 tmpPosition = transform.position;
-                transform.position = swapObject.position;
+        // The `or` prevent doSwap to be cleared if FixedUpdate didn't consume the action
+        doSwap |= Input.GetMouseButtonDown(0);
+    }
+
+    private void FixedUpdate() {
+        if (doSwap) {
+            if (swapObject != null) {
+                Vector2 tmpPosition = rbody.position;
+                rbody.position = swapObject.position;
                 swapObject.position = tmpPosition;
 
-                ISwapResponder sr = swapObject.GetComponent<ISwapResponder>();
+                ISwapResponder sr = swapObject.gameObject.GetComponent<ISwapResponder>();
                 if (sr != null) sr.Swapped(gameObject);
             }
+
+            doSwap = false;
         }
     }
 }
