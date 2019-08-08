@@ -50,12 +50,18 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
             // Hitting a crate/drone
             else if (other.name == "Crate" || other.name == "Drone")
                 Destroy(other.gameObject);
-            else
-                Break();
         } else {
             // Being hit by a drone
             if (other.name == "Drone")
                 Break();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (isFalling) {
+            Collider2D col = collision.collider;
+            if (col.name != "Hero" && col.name != "Crate" && col.name != "Drone")
+                Break(); // We're hitting the ground
         }
     }
 
