@@ -15,11 +15,15 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
     private float fallingTimer;
     private bool wasSwapped;
 
+    private AudioSource breakSound;
+
     // Start is called before the first frame update
     void Start() {
         rbody = GetComponent<Rigidbody2D>();
         isFalling = false;
         fallingTimer = 0f;
+
+        breakSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -66,7 +70,6 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
     }
 
     public void Swapped(GameObject hero) {
-        Debug.Log(hero.GetComponent<Rigidbody2D>().velocity);
         bool heroIsFalling = hero.GetComponent<Rigidbody2D>().velocity.y < 0;
         if (heroIsFalling) {
             isFalling = true;
@@ -77,7 +80,10 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
     }
 
     public void Break() {
-        GetComponent<AudioSource>().Play();
+        // Prevent break sound from playing twice
+        if (breakSound.isPlaying == false)
+            breakSound.Play();
+
         GetComponentInChildren<SpriteRenderer>().enabled = false;
         foreach (var col in GetComponentsInChildren<Collider2D>())
             col.enabled = false;
