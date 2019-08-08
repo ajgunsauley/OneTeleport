@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DroneController : MonoBehaviour {
+public class DroneController : MonoBehaviour, ISwapResponder {
     Rigidbody2D rbody;
     public float speed = 1f;
 
@@ -10,6 +10,9 @@ public class DroneController : MonoBehaviour {
     private bool switched;
 
     private AudioSource pushSound;
+
+    private readonly RigidbodyConstraints2D roamingConstraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionY;
+    private readonly RigidbodyConstraints2D swappingConstraints = RigidbodyConstraints2D.FreezeRotation;
 
     // Start is called before the first frame update
     void Start() {
@@ -20,6 +23,9 @@ public class DroneController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
+        // Restore roaming constraints
+        rbody.constraints = roamingConstraints;
+
         if (!switched && rbody.velocity.sqrMagnitude < speed * speed * .99f) {
             switched = true;
             RotateDrone();
@@ -49,5 +55,10 @@ public class DroneController : MonoBehaviour {
             direction = Vector2.left;
         else
             direction = Vector2.right;
+    }
+
+    public void Swapped(GameObject hero) {
+        // Temporarily remove physic constraints
+        rbody.constraints = swappingConstraints;
     }
 }

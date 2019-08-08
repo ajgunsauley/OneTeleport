@@ -26,11 +26,9 @@ public class LavaController : MonoBehaviour
         }
         if (other.name == "Icicle")
         {
-            var rbody = other.GetComponent<Rigidbody2D>();
-            if (rbody.velocity.y != 0)
-            {
-                Destroy(other.gameObject);
-            }
+            IcicleController ic = other.GetComponent<IcicleController>();
+            if (ic.IsFalling())
+                ic.Break();
         }
         if (other.name == "Hero")
         {
