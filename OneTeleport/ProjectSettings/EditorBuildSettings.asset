@@ -8,37 +8,37 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RealLevels/00Title.unity
     guid: 6321dc18ec6f34845866d1473a224807
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/RealLevels/01BoxIntro.unity
     guid: 93c45bc69edccf44eb191b0e5b9deb27
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/RealLevels/02GateIntro.unity
     guid: 072a4fa78bc530e45abbd11fb5cf32b3
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/RealLevels/03BoxTheSwitch.unity
     guid: 3cbab6fbc8b4c194db6e79174acd3853
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/RealLevels/04IcicleRun.unity
     guid: a038148dcf22b5b47be298d602bc6305
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/RealLevels/05WhereMyBoxGo.unity
     guid: a0d8d337a7aac3d4fbaa72b83de2b7cd
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/RealLevels/06WhyNoHitSwitch.unity
     guid: b03361b615959c642be067a315291b4f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/RealLevels/07Tunnels.unity
     guid: 358e98179f083494bb04f44d7c5b420a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/RealLevels/08DroneIntro.unity
     guid: 276a72d9cf89ba345bc5a56c32f573a7
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/RealLevels/09MyDroneDied.unity
     guid: 2033e2577fcf03e4bb6174e77e5edd75
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/RealLevels/10FastIcicles.unity
     guid: 920f224dfbeb40144b6311c6defea416
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/RealLevels/11BringOnTheLava.unity
     guid: 721b780a58ea0e84985ecf1fd13b75f3
   - enabled: 1
