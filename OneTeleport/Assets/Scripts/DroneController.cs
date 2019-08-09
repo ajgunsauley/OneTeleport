@@ -36,18 +36,6 @@ public class DroneController : MonoBehaviour, ISwapResponder {
         rbody.velocity = speed * direction;
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
-        //if icicle is not moving, drone kills it and then flips direction
-        if (other.transform.name == "Icicle") {
-            Vector2 icicleSpeed = other.attachedRigidbody.velocity;
-            if (icicleSpeed.y == 0) {
-                other.GetComponent<IcicleController>().Break();
-                RotateDrone();
-            }
-        }
-
-    }
-
     void RotateDrone() {
         pushSound.Play();
 

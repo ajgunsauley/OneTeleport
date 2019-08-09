@@ -16,95 +16,140 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
 
     private AudioSource breakSound;
 
-    // Start is called before the first frame update
-    void Start() {
-        rbody = GetComponent<Rigidbody2D>();
-        breakSound = GetComponent<AudioSource>();
-    }
+    private StateManager stateManager_;
 
-    // Update is called once per frame
-    void Update() {
-        // Once the player swapped with the icicle, it can't fall any further
-        if (wasSwapped)
-            return;
+    private class IcicleState : State, ISwapResponder {
+        protected IcicleController ic_;
+        public IcicleState(IcicleController ic) { ic_ = ic; }
 
-        if (IsFalling() == false) {
-            if (fallingTimer == 0f) {
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 100f, rayFallingMask);
-                if (hit && hit.transform.name == "Hero")
-                    fallingTimer = Time.time + gigglingTime;
-            } else if (Time.time >= fallingTimer) {
-                Fall();
-            }
+        public virtual void Swapped(GameObject hero) {
+            Vector2 hv = hero.GetComponent<Rigidbody2D>().velocity;
+            if (hv.y < -0.01f)
+                ic_.stateManager_.Swap(new StateFalling(ic_));
+            else
+                ic_.stateManager_.Swap(new StateSwapped(ic_));
+        }
+
+        public override void OnCollisionEnter2D(Collision2D collision) {
+            if (collision.collider.name == "Drone")
+                ic_.Break();
         }
     }
 
-    private void FixedUpdate() {
-        // Re-enable appropriate constraints (necessary after swap)
-        rbody.constraints = (IsFalling() || wasSwapped)
-            ? RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX
-            : RigidbodyConstraints2D.FreezeAll;
+    private class StateDetect : IcicleState {
+        public StateDetect(IcicleController ic) : base(ic) { }
+
+        override public void OnStart() {
+            ic_.rbody.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+
+        override public void Update() {
+            RaycastHit2D hit = Physics2D.Raycast(ic_.transform.position, Vector2.down, 100f, ic_.rayFallingMask);
+            if (hit && hit.transform.name == "Hero")
+                ic_.stateManager_.Swap(new StateGiggling(ic_));
+        }
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
-        if (IsFalling()) {
+    private class StateGiggling : IcicleState {
+        public StateGiggling(IcicleController ic) : base(ic) { }
+
+        private float gigglingTimeOut;
+        override public void OnStart() {
+            gigglingTimeOut = Time.time + ic_.gigglingTime;
+        }
+
+        public override void Update() {
+            if (Time.time > gigglingTimeOut)
+                ic_.stateManager_.Swap(new StateFalling(ic_));
+        }
+    }
+
+    private class StateFalling : IcicleState {
+        public StateFalling(IcicleController ic) : base(ic) { }
+
+        public override void Swapped(GameObject hero) {
+            // We just keep falling!
+            ic_.rbody.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+        }
+
+        public override void OnStart() {
+            ic_.rbody.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+        }
+
+        public override void OnCollisionEnter2D(Collision2D collision) {
+            Collider2D other = collision.collider;
             // Hitting poor chunky boy
             if (other.name == "Hero") {
                 other.GetComponent<HeroController>().Die(false);
-                endStateController.FailLevel();
+                ic_.endStateController.FailLevel();
             }
             // Hitting a crate/drone
             else if (other.name == "Crate" || other.name == "Drone")
                 Destroy(other.gameObject);
-        } else {
-            // Being hit by a drone
-            if (other.name == "Drone")
-                Break();
+
+            // We get rekt
+            ic_.Break();
         }
+    }
+
+    private class StateSwapped : IcicleState {
+        public StateSwapped(IcicleController ic) : base(ic) { }
+
+        public override void OnStart() {
+            ic_.rbody.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+        }
+    }
+
+    private class StateBreak : IcicleState {
+        public StateBreak(IcicleController ic) : base(ic) { }
+
+        public override void Swapped(GameObject hero) { }
+        public override void OnCollisionEnter2D(Collision2D collision) { }
+
+        public override void OnStart() {
+            ic_.breakSound.Play();
+
+            // Disable components that affect the game
+            ic_.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            foreach (var col in ic_.GetComponentsInChildren<Collider2D>())
+                col.enabled = false;
+
+            Destroy(ic_.gameObject, 1f);
+        }
+    }
+
+    // Start is called before the first frame update
+    void Start() {
+        rbody = GetComponent<Rigidbody2D>();
+        breakSound = GetComponent<AudioSource>();
+
+        stateManager_ = new StateManager();
+        stateManager_.Push(new StateDetect(this));
+    }
+
+    // Update is called once per frame
+    void Update() {
+        stateManager_.Update();
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-        if (IsFalling()) {
-            Collider2D col = collision.collider;
-            if (col.name != "Hero" && col.name != "Crate" && col.name != "Drone")
-                Break(); // We're hitting the ground
-        }
+        stateManager_.OnCollisionEnter2D(collision);
     }
 
     public void Swapped(GameObject hero) {
-        // Remove Position constraints to allow swapping
-        rbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-
-        // If the hero swap while falling, the icicle must fall too
-        bool heroIsFalling = hero.GetComponent<Rigidbody2D>().velocity.y < 0;
-        if (heroIsFalling)
-            Fall();
-
-        // After a swap, we won't fall anymore. So...
-        wasSwapped = true; // Disable player detection
-        fallingTimer = 0f; // Stop giggling
+        if (stateManager_.CurrentState() is IcicleState state)
+            state.Swapped(hero);
     }
 
     public bool IsFalling() {
-        return isFalling;
+        return (stateManager_.CurrentState() as StateFalling) != null;
     }
 
     public void Fall() {
-        // Remove FreezeY to let the icicle fall
-        isFalling = true;
-        rbody.constraints ^= RigidbodyConstraints2D.FreezePositionY;
+        stateManager_.Swap(new StateFalling(this));
     }
 
     public void Break() {
-        // Prevent break sound from playing twice
-        if (breakSound.isPlaying == false)
-            breakSound.Play();
-
-        // Disable components that affect the game
-        GetComponentInChildren<SpriteRenderer>().enabled = false;
-        foreach (var col in GetComponentsInChildren<Collider2D>())
-            col.enabled = false;
-
-        Destroy(gameObject, 1f);
+        stateManager_.Swap(new StateBreak(this));
     }
 }

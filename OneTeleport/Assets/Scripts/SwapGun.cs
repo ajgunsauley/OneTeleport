@@ -48,6 +48,8 @@ public class SwapGun : MonoBehaviour {
     private void FixedUpdate() {
         if (doSwap) {
             if (swapObject != null) {
+                swapObject.constraints = RigidbodyConstraints2D.None;
+
                 Vector2 tmpPosition = rbody.position;
                 rbody.position = swapObject.position;
                 swapObject.position = tmpPosition;
