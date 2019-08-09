@@ -41,7 +41,7 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
 
     private void FixedUpdate() {
         // Re-enable appropriate constraints (necessary after swap)
-        rbody.constraints = IsFalling()
+        rbody.constraints = (IsFalling() || wasSwapped)
             ? RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX
             : RigidbodyConstraints2D.FreezeAll;
     }
