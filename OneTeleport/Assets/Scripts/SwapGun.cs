@@ -19,8 +19,11 @@ public class SwapGun : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        Vector3 gamepadDirection = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 aimDirection = mousePos - transform.position;
+        Vector3 aimDirection = (gamepadDirection.sqrMagnitude > 0.25f)
+            ? gamepadDirection
+            : mousePos - transform.position;
         aimDirection.z = 0;
 
         swapObject = null;
@@ -29,7 +32,7 @@ public class SwapGun : MonoBehaviour {
         rayLine.SetPosition(0, transform.position);
         rayLine.SetPosition(1, transform.position);
 
-        if (aimDirection.sqrMagnitude > 0.25) {
+        if (aimDirection.sqrMagnitude > 0.25f) {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, aimDirection, 100f, rayIntersectLayers);
 
             if (hit) {
@@ -42,7 +45,7 @@ public class SwapGun : MonoBehaviour {
         }
 
         // The `or` prevent doSwap to be cleared if FixedUpdate didn't consume the action
-        doSwap |= Input.GetMouseButtonDown(0);
+        doSwap |= Input.GetButtonDown("Fire1");
     }
 
     private void FixedUpdate() {
