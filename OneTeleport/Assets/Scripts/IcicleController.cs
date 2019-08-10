@@ -98,6 +98,11 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
         public override void OnStart() {
             ic_.rbody.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
         }
+
+        public override void Update() {
+            if (ic_.rbody.velocity.y < -0.2f)
+                ic_.stateManager_.Swap(new StateFalling(ic_));
+        }
     }
 
     private class StateBreak : IcicleState {
