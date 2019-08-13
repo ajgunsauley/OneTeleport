@@ -15,6 +15,7 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
     private bool isFalling;
 
     private AudioSource breakSound;
+    private Animator animator;
 
     private StateManager stateManager_;
 
@@ -56,6 +57,11 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
         private float gigglingTimeOut;
         override public void OnStart() {
             gigglingTimeOut = Time.time + ic_.gigglingTime;
+            ic_.animator.SetBool("IsGiggling", true);
+        }
+
+        public override void OnPause() {
+            ic_.animator.SetBool("IsGiggling", false);
         }
 
         public override void Update() {
@@ -103,6 +109,12 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
             if (ic_.rbody.velocity.y < -0.2f)
                 ic_.stateManager_.Swap(new StateFalling(ic_));
         }
+
+        public override void OnCollisionEnter2D(Collision2D collision) {
+            Collider2D other = collision.collider;
+            if (other.name == "Crate")
+                Destroy(other.gameObject);
+        }
     }
 
     private class StateBreak : IcicleState {
@@ -127,6 +139,7 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
     void Start() {
         rbody = GetComponent<Rigidbody2D>();
         breakSound = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
 
         stateManager_ = new StateManager();
         stateManager_.Push(new StateDetect(this));
