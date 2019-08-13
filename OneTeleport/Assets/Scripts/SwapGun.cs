@@ -5,6 +5,8 @@ using UnityEngine;
 public class SwapGun : MonoBehaviour {
     public LayerMask rayIntersectLayers;
 
+    public ParticleSystem vfx;
+
     private Rigidbody2D rbody;
     private LineRenderer rayLine;
 
@@ -31,6 +33,7 @@ public class SwapGun : MonoBehaviour {
         // Hide the ray
         rayLine.SetPosition(0, transform.position);
         rayLine.SetPosition(1, transform.position);
+        vfx.transform.position = new Vector3(0, 0, -1000);
 
         if (aimDirection.sqrMagnitude > 0.25f) {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, aimDirection, 100f, rayIntersectLayers);
@@ -38,6 +41,10 @@ public class SwapGun : MonoBehaviour {
             if (hit) {
                 swapObject = hit.transform.CompareTag("Swappable") ? hit.rigidbody : null;
                 rayLine.SetPosition(1, hit.point);
+
+                vfx.transform.position = hit.point;
+                vfx.transform.rotation = Quaternion.Euler(0f, 0f,
+                    Vector2.SignedAngle(Vector2.up, hit.normal));
             } else {
                 swapObject = null;
                 rayLine.SetPosition(1, transform.position + 100f * aimDirection);
