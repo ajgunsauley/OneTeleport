@@ -105,8 +105,8 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
             ic_.rbody.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
         }
 
-        public override void Update() {
-            if (ic_.rbody.velocity.y < -0.2f)
+        public override void FixedUpdate() {
+            if (ic_.rbody.velocity.y < -1f)
                 ic_.stateManager_.Swap(new StateFalling(ic_));
         }
 
@@ -148,6 +148,10 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
     // Update is called once per frame
     void Update() {
         stateManager_.Update();
+    }
+
+    private void FixedUpdate() {
+        stateManager_.FixedUpdate();
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
