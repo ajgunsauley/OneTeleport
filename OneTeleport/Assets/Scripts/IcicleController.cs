@@ -30,11 +30,6 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
             else
                 ic_.stateManager_.Swap(new StateSwapped(ic_));
         }
-
-        public override void OnCollisionEnter2D(Collision2D collision) {
-            if (collision.collider.name == "Drone")
-                ic_.Break();
-        }
     }
 
     private class StateDetect : IcicleState {
@@ -48,6 +43,12 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
             RaycastHit2D hit = Physics2D.Raycast(ic_.transform.position, Vector2.down, 100f, ic_.rayFallingMask);
             if (hit && hit.transform.name == "Hero")
                 ic_.stateManager_.Swap(new StateGiggling(ic_));
+        }
+
+        public override void OnCollisionEnter2D(Collision2D collision) {
+            string name = collision.collider.name;
+            if (name == "Drone" || name == "Crate")
+                ic_.Break();
         }
     }
 
@@ -67,6 +68,12 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
         public override void Update() {
             if (Time.time > gigglingTimeOut)
                 ic_.stateManager_.Swap(new StateFalling(ic_));
+        }
+
+        public override void OnCollisionEnter2D(Collision2D collision) {
+            string name = collision.collider.name;
+            if (name == "Drone" || name == "Crate")
+                ic_.Break();
         }
     }
 
@@ -92,9 +99,9 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
             // Hitting a crate/drone
             else if (other.name == "Crate" || other.name == "Drone")
                 Destroy(other.gameObject);
-
             // We get rekt
-            ic_.Break();
+            else
+                ic_.Break();
         }
     }
 
@@ -112,8 +119,24 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
 
         public override void OnCollisionEnter2D(Collision2D collision) {
             Collider2D other = collision.collider;
-            if (other.name == "Crate")
-                Destroy(other.gameObject);
+            if (other.name == "Drone")
+                ic_.Break();
+            else if (other.name == "Crate") {
+                float icicleY = ic_.rbody.position.y;
+                float crateY = other.attachedRigidbody.position.y;
+
+                // Only destroy the crate if the icicle is above it!
+                if (icicleY > crateY)
+                    Destroy(other.gameObject);
+            } else if (other.name == "Icicle") {
+                ic_.Break();
+                other.GetComponent<IcicleController>().Break();
+            }
+        }
+
+        public override void OnTriggerEnter2D(Collider2D other) {
+            if (other.name == "Button")
+                ic_.Break();
         }
     }
 
@@ -156,6 +179,10 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
 
     private void OnCollisionEnter2D(Collision2D collision) {
         stateManager_.OnCollisionEnter2D(collision);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        stateManager_.OnTriggerEnter2D(collision);
     }
 
     public void Swapped(GameObject hero) {
