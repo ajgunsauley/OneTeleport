@@ -108,7 +108,10 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
     private class StateSwapped : IcicleState {
         public StateSwapped(IcicleController ic) : base(ic) { }
 
+        private float breakDroneTimer;
+
         public override void OnStart() {
+            breakDroneTimer = Time.time + .2f;
             ic_.rbody.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
         }
 
@@ -119,9 +122,11 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
 
         public override void OnCollisionEnter2D(Collision2D collision) {
             Collider2D other = collision.collider;
-            if (other.name == "Drone")
+            if (other.name == "Drone") {
                 ic_.Break();
-            else if (other.name == "Crate") {
+                if (Time.time < breakDroneTimer)
+                    Destroy(other.gameObject);
+            } else if (other.name == "Crate") {
                 float icicleY = ic_.rbody.position.y;
                 float crateY = other.attachedRigidbody.position.y;
 
