@@ -6,6 +6,7 @@ public class SwapGun : MonoBehaviour {
     public LayerMask rayIntersectLayers;
 
     public ParticleSystem vfx;
+    public Gradient swapColor, cantSwapColor;
 
     private Rigidbody2D rbody;
     private LineRenderer rayLine;
@@ -13,10 +14,17 @@ public class SwapGun : MonoBehaviour {
     private Rigidbody2D swapObject;
     private bool doSwap;
 
+    private ParticleSystem.MainModule mainPS;
+    private ParticleSystem.MinMaxGradient swapColorPS, cantSwapColorPS;
+
     // Start is called before the first frame update
     void Start() {
         rbody = GetComponent<Rigidbody2D>();
         rayLine = GetComponentInChildren<LineRenderer>();
+
+        mainPS = vfx.main;
+        swapColorPS = new ParticleSystem.MinMaxGradient(swapColor);
+        cantSwapColorPS = new ParticleSystem.MinMaxGradient(cantSwapColor);
     }
 
     // Update is called once per frame
@@ -31,8 +39,11 @@ public class SwapGun : MonoBehaviour {
         swapObject = null;
 
         // Hide the ray
+        rayLine.colorGradient = cantSwapColor;
         rayLine.SetPosition(0, transform.position);
         rayLine.SetPosition(1, transform.position);
+
+        mainPS.startColor = cantSwapColorPS;
         vfx.transform.position = new Vector3(0, 0, -1000);
 
         if (aimDirection.sqrMagnitude > 0.25f) {
@@ -40,6 +51,11 @@ public class SwapGun : MonoBehaviour {
 
             if (hit) {
                 swapObject = hit.transform.CompareTag("Swappable") ? hit.rigidbody : null;
+                if (swapObject != null) {
+                    rayLine.colorGradient = swapColor;
+                    mainPS.startColor = swapColorPS;
+                }
+
                 rayLine.SetPosition(1, hit.point);
 
                 vfx.transform.position = hit.point;
