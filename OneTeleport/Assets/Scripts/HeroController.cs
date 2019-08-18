@@ -51,7 +51,6 @@ public class HeroController : MonoBehaviour {
     private void Land() {
         float magnitude = rbody.velocity.magnitude;
         magnitude = Mathf.Pow(magnitude, landSettings.z);
-        Debug.Log("LANDING " + magnitude);
         magnitude = Mathf.Clamp(magnitude, landSettings.x, landSettings.y);
 
         StartCoroutine(cameraShake.Shake(.15f, magnitude * landShake));
@@ -59,9 +58,7 @@ public class HeroController : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        //Debug.Log(Physics2D.OverlapCircle((Vector2)transform.position + landDetectOffset, .5f, groundLayer));
         bool isGrounded = Physics2D.OverlapCircle((Vector2)transform.position + landDetectOffset, .2f, groundLayer);
-        //Debug.Log(wasGrounded + " => " + isGrounded);
         if (!wasGrounded && isGrounded)
             Land();
 
