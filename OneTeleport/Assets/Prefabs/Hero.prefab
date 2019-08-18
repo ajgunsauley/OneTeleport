@@ -5312,6 +5312,12 @@ MonoBehaviour:
   deathSFX: {fileID: 3022402380808103797}
   glubSound: {fileID: 6647715901725499052}
   frySound: {fileID: 1964799332205754163}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  landDetectOffset: {x: 0, y: -0.5}
+  landShake: {x: 0.0001, y: 0.001}
+  landSettings: {x: 20, y: 500, z: 3}
 --- !u!114 &1178722679
 MonoBehaviour:
   m_ObjectHideFlags: 0
