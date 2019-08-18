@@ -10,7 +10,7 @@ public class HeroController : MonoBehaviour {
 
     // Group death SFX in the same object, detach it on deatch
     public GameObject deathSFX;
-    public AudioSource glubSound, frySound;
+    public AudioSource glubSound, frySound, landSound;
     public LayerMask groundLayer;
     public Vector2 landDetectOffset, landShake;
 
@@ -55,6 +55,7 @@ public class HeroController : MonoBehaviour {
         magnitude = Mathf.Clamp(magnitude, landSettings.x, landSettings.y);
 
         StartCoroutine(cameraShake.Shake(.15f, magnitude * landShake));
+        landSound.Play();
     }
 
     private void FixedUpdate() {
