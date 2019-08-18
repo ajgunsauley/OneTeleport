@@ -8,6 +8,7 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
     public EndStateController endStateController;
     public LayerMask rayFallingMask;
     public float gigglingTime = .2f;
+    public Collider2D droneCollider;
 
     private Rigidbody2D rbody;
     private float fallingTimer;
@@ -37,6 +38,10 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
 
         override public void OnStart() {
             ic_.rbody.constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+
+        public override void OnDisable() {
+            ic_.droneCollider.enabled = false;
         }
 
         override public void Update() {
