@@ -51,6 +51,9 @@ EditorBuildSettings:
     path: Assets/Scenes/RealLevels/14PinkPalace.unity
     guid: c1ac7028ac2444363bb6aca5e10b71a1
   - enabled: 1
+    path: Assets/Scenes/RealLevels/15ClickBait.unity
+    guid: cc3ddc2655e01482b8085b699593440b
+  - enabled: 1
     path: Assets/Scenes/RealLevels/99EndGame.unity
     guid: dd39270c880911d41812139adc711f92
   m_configObjects: {}
