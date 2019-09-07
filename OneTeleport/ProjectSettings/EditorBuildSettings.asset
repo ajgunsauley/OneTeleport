@@ -78,6 +78,9 @@ EditorBuildSettings:
     path: Assets/Scenes/RealLevels/24IcicleParty.unity
     guid: c57ea4d6b6c3d4eb59c51a937aded06c
   - enabled: 1
+    path: Assets/Scenes/RealLevels/25TheDragon.unity
+    guid: 820ebdec4cd9343e199ce8b70454f37c
+  - enabled: 1
     path: Assets/Scenes/RealLevels/99EndGame.unity
     guid: dd39270c880911d41812139adc711f92
   m_configObjects: {}
