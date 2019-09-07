@@ -23019,6 +23019,16 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[31].second.m_ColliderType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5461180500360984637, guid: 39ba42f1dd72b4e15a4ee48a7270248c,
+        type: 3}
+      propertyPath: m_ColliderPaths.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5461180500927062937, guid: 39ba42f1dd72b4e15a4ee48a7270248c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5461180501669179949, guid: 39ba42f1dd72b4e15a4ee48a7270248c,
         type: 3}
       propertyPath: m_Tiles.Array.size
@@ -23648,16 +23658,6 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[18].second.m_ColliderType
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5461180500360984637, guid: 39ba42f1dd72b4e15a4ee48a7270248c,
-        type: 3}
-      propertyPath: m_ColliderPaths.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5461180500927062937, guid: 39ba42f1dd72b4e15a4ee48a7270248c,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39ba42f1dd72b4e15a4ee48a7270248c, type: 3}
 --- !u!1 &1255693076
@@ -23694,7 +23694,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 110.66, y: -15}
+  m_AnchoredPosition: {x: 110.65991, y: -15}
   m_SizeDelta: {x: 221.32, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1255693078
@@ -24470,7 +24470,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 647f1cdbf92cd47dda9eaeebc52eaf24, type: 3}
+      objectReference: {fileID: 8300000, guid: 8e624ce52ae9a4861b38d4230852253d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfe814cdf62f541378d443dbf0421a94, type: 3}
 --- !u!1001 &2102614316
