@@ -7,7 +7,7 @@ public class DroneController : MonoBehaviour, ISwapResponder {
     public float speed = 1f;
 
     private Vector2 direction = Vector2.right;
-    private bool switched;
+    private float switchTimer;
 
     private AudioSource pushSound;
 
@@ -26,11 +26,9 @@ public class DroneController : MonoBehaviour, ISwapResponder {
         // Restore roaming constraints
         rbody.constraints = roamingConstraints;
 
-        if (!switched && rbody.velocity.sqrMagnitude < speed * speed * .99f) {
-            switched = true;
+        if (Time.time > switchTimer && rbody.velocity.sqrMagnitude < speed * speed * .99f) {
+            switchTimer = Time.time + .1f;
             RotateDrone();
-        } else {
-            switched = false;
         }
 
         rbody.velocity = speed * direction;
