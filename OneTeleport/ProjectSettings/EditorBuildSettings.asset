@@ -42,6 +42,9 @@ EditorBuildSettings:
     path: Assets/Scenes/RealLevels/14DroneGulag.unity
     guid: 721b780a58ea0e84985ecf1fd13b75f3
   - enabled: 1
+    path: Assets/Scenes/RealLevels/11DronePlatforms.unity
+    guid: a64f6976799722442850fef0f6a97e5b
+  - enabled: 1
     path: Assets/Scenes/RealLevels/05LavaIntro.unity
     guid: 93c45bc69edccf44eb191b0e5b9deb27
   - enabled: 1
