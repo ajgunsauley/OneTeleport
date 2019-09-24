@@ -46,13 +46,13 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
 
         override public void Update() {
             RaycastHit2D hit = Physics2D.Raycast(ic_.transform.position, Vector2.down, 100f, ic_.rayFallingMask);
-            if (hit && hit.transform.name == "Hero")
+            if (hit && hit.transform.name.StartsWith("Hero", System.StringComparison.Ordinal))
                 ic_.stateManager_.Swap(new StateGiggling(ic_));
         }
 
         public override void OnCollisionEnter2D(Collision2D collision) {
             string name = collision.collider.name;
-            if (name == "Drone" || name == "Crate")
+            if (name.StartsWith( "Drone", System.StringComparison.Ordinal) || name.StartsWith( "Crate", System.StringComparison.Ordinal))
                 ic_.Break();
         }
     }
@@ -77,7 +77,7 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
 
         public override void OnCollisionEnter2D(Collision2D collision) {
             string name = collision.collider.name;
-            if (name == "Drone" || name == "Crate")
+            if (name.StartsWith( "Drone", System.StringComparison.Ordinal) || name.StartsWith( "Crate", System.StringComparison.Ordinal))
                 ic_.Break();
         }
     }
@@ -97,12 +97,12 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
         public override void OnCollisionEnter2D(Collision2D collision) {
             Collider2D other = collision.collider;
             // Hitting poor chunky boy
-            if (other.name == "Hero") {
+            if (other.name.StartsWith( "Hero", System.StringComparison.Ordinal)) {
                 other.GetComponent<HeroController>().Die(false);
                 ic_.endStateController.FailLevel();
             }
             // Hitting a crate/drone
-            else if (other.name == "Crate" || other.name == "Drone")
+            else if (other.name.StartsWith( "Crate", System.StringComparison.Ordinal) || other.name.StartsWith( "Drone", System.StringComparison.Ordinal))
                 Destroy(other.gameObject);
             // We get rekt
             else
@@ -127,25 +127,25 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
 
         public override void OnCollisionEnter2D(Collision2D collision) {
             Collider2D other = collision.collider;
-            if (other.name == "Drone") {
+            if (other.name.StartsWith( "Drone", System.StringComparison.Ordinal)) {
                 ic_.Break();
                 if (Time.time < breakDroneTimer)
                     Destroy(other.gameObject);
-            } else if (other.name == "Crate") {
+            } else if (other.name.StartsWith( "Crate", System.StringComparison.Ordinal)) {
                 float icicleY = ic_.rbody.position.y;
                 float crateY = other.attachedRigidbody.position.y;
 
                 // Only destroy the crate if the icicle is above it!
                 if (icicleY > crateY)
                     Destroy(other.gameObject);
-            } else if (other.name == "Icicle") {
+            } else if (other.name.StartsWith( "Icicle", System.StringComparison.Ordinal)) {
                 ic_.Break();
                 other.GetComponent<IcicleController>().Break();
             }
         }
 
         public override void OnTriggerEnter2D(Collider2D other) {
-            if (other.name == "Button")
+            if (other.name.StartsWith( "Button", System.StringComparison.Ordinal))
                 ic_.Break();
         }
     }
