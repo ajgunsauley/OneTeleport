@@ -43,7 +43,7 @@ public class EndStateController : MonoBehaviour
     //enter the gate directly to win!
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.name == "Hero")
+        if (other.name.StartsWith("Hero", System.StringComparison.Ordinal))
         {
 
             other.GetComponent<HeroController>().Win();
