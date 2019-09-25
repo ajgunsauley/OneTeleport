@@ -33,7 +33,6 @@ public class LavaController : MonoBehaviour
         if (other.name.StartsWith("Hero", System.StringComparison.Ordinal))
         {
             other.GetComponent<HeroController>().Die(true);
-            endStateController.FailLevel();
         }
 
     }
