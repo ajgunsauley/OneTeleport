@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 7895233106340060239}
   - component: {fileID: 1376040506830984271}
   m_Layer: 8
-  m_Name: ButtonTrigger
+  m_Name: TriggerButton
   m_TagString: ButtonTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
