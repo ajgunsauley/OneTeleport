@@ -7,7 +7,6 @@ public class HeroController : MonoBehaviour {
     private CameraShake cameraShake;
     private bool wasGrounded = true;
     private Rigidbody2D rbody;
-    private EndStateController endstate;
 
     // Group death SFX in the same object, detach it on deatch
     public GameObject deathSFX;
@@ -22,7 +21,6 @@ public class HeroController : MonoBehaviour {
         animator = GetComponent<Animator>();
         cameraShake = Camera.main.GetComponent<CameraShake>();
         rbody = GetComponent<Rigidbody2D>();
-        endstate = GameObject.FindGameObjectWithTag("EndZone").GetComponent<EndStateController>();
     }
 
     public void Die(bool playFrying = false) {
@@ -39,8 +37,6 @@ public class HeroController : MonoBehaviour {
         // Destroy both object at different point in time
         Destroy(gameObject);
         Destroy(deathSFX, 1f);
-
-        endstate.FailLevel();
     }
 
     public void Win() {
