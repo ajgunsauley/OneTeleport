@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class TriggerButton : MonoBehaviour
+public class ButtonTrigger : MonoBehaviour
 {
     public UnityEvent onEnable, onDisable;
     private Animator animator;
