@@ -7,6 +7,7 @@ TagManager:
   - Swappable
   - ButtonTrigger
   - Music
+  - EndZone
   layers:
   - Default
   - TransparentFX
