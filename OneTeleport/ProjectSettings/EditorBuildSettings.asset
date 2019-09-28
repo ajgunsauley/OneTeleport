@@ -48,38 +48,38 @@ EditorBuildSettings:
     path: Assets/Scenes/IngameContent/Tutorials/Tut11DronePlatforms.unity
     guid: a64f6976799722442850fef0f6a97e5b
   - enabled: 1
-    path: Assets/Scenes/IngameContent/Challenges/Lvl05LavaIntro.unity
-    guid: 93c45bc69edccf44eb191b0e5b9deb27
-  - enabled: 1
-    path: Assets/Scenes/IngameContent/Challenges/Lvl11DroneBoat.unity
-    guid: 0498b68821d954b26aaaf061202534ca
-  - enabled: 1
-    path: Assets/Scenes/IngameContent/Challenges/Lvl12SittingOnIt.unity
-    guid: ae1a496ba1c5b4ff5b1a118db64657da
-  - enabled: 1
-    path: Assets/Scenes/IngameContent/Challenges/Lvl15CrateTag.unity
-    guid: 10776a18ec9ef470dbaffbe07d12f75e
+    path: Assets/Scenes/IngameContent/Challenges/Lvl17ThreeDoors.unity
+    guid: b607b3e451062445bb67332285690337
   - enabled: 1
     path: Assets/Scenes/IngameContent/Challenges/Lvl16IntroPhysics.unity
     guid: f2ba48ad7d2874a83a3d5fd267d0a0f3
   - enabled: 1
-    path: Assets/Scenes/IngameContent/Challenges/Lvl17ThreeDoors.unity
-    guid: b607b3e451062445bb67332285690337
+    path: Assets/Scenes/IngameContent/Challenges/Lvl11DroneBoat.unity
+    guid: 0498b68821d954b26aaaf061202534ca
+  - enabled: 1
+    path: Assets/Scenes/IngameContent/Challenges/Lvl15CrateTag.unity
+    guid: 10776a18ec9ef470dbaffbe07d12f75e
   - enabled: 1
     path: Assets/Scenes/IngameContent/Challenges/Lvl18LavaRace.unity
     guid: 7339b69fe095444e0b5d502d6a4ac04f
   - enabled: 1
-    path: Assets/Scenes/IngameContent/Challenges/Lvl19ReverseDG.unity
-    guid: 0c7e87fd2532a41b197204761cdf6f28
-  - enabled: 1
-    path: Assets/Scenes/IngameContent/Challenges/Lvl20CrateParty.unity
-    guid: 8046a9f07c85443dd9d084aa52d81e5a
+    path: Assets/Scenes/IngameContent/Challenges/Lvl22Voyager.unity
+    guid: dcb4f7757ef145e4a984d6b5d46000fb
   - enabled: 1
     path: Assets/Scenes/IngameContent/Challenges/Lvl21Pinball.unity
     guid: 24b0044f993594d58bdbb7f7dfdb25f1
   - enabled: 1
-    path: Assets/Scenes/IngameContent/Challenges/Lvl22Voyager.unity
-    guid: dcb4f7757ef145e4a984d6b5d46000fb
+    path: Assets/Scenes/IngameContent/Challenges/Lvl30DroneCaravan.unity
+    guid: 5c81722a2d2fa49918ccdb2aaef84bbf
+  - enabled: 1
+    path: Assets/Scenes/IngameContent/Challenges/Lvl28FourXXXX.unity
+    guid: e610478740a444bc48915e79bf894004
+  - enabled: 1
+    path: Assets/Scenes/IngameContent/Challenges/Lvl25InACloset.unity
+    guid: c1ac7028ac2444363bb6aca5e10b71a1
+  - enabled: 1
+    path: Assets/Scenes/IngameContent/Challenges/Lvl31ntroBorg.unity
+    guid: 2b7075b59267e40168c60bb29996772e
   - enabled: 1
     path: Assets/Scenes/IngameContent/Challenges/Lvl23ThreeFloors.unity
     guid: 111693800331d437790a90e3a63b6563
@@ -87,38 +87,23 @@ EditorBuildSettings:
     path: Assets/Scenes/IngameContent/Challenges/Lvl24Partitions.unity
     guid: 1c279ee8995064ab2b33a6b30ddf3bda
   - enabled: 1
-    path: Assets/Scenes/IngameContent/Challenges/Lvl25InACloset.unity
-    guid: c1ac7028ac2444363bb6aca5e10b71a1
-  - enabled: 1
-    path: Assets/Scenes/IngameContent/Challenges/Lvl26WhchSwtch.unity
-    guid: f12dc87f8b3c64810b51f21d95651877
-  - enabled: 1
     path: Assets/Scenes/IngameContent/Challenges/Lvl27EightIcicles.unity
     guid: 1472bd8ebc9304933be81a0c8158e830
-  - enabled: 1
-    path: Assets/Scenes/IngameContent/Challenges/Lvl28FourXXXX.unity
-    guid: e610478740a444bc48915e79bf894004
   - enabled: 1
     path: Assets/Scenes/IngameContent/Challenges/Lvl29DroneAmis.unity
     guid: 1b1583573a7de4a0f9de207267067f05
   - enabled: 1
-    path: Assets/Scenes/IngameContent/Challenges/Lvl30DroneCaravan.unity
-    guid: 5c81722a2d2fa49918ccdb2aaef84bbf
-  - enabled: 1
-    path: Assets/Scenes/IngameContent/Challenges/Lvl31ntroBorg.unity
-    guid: 2b7075b59267e40168c60bb29996772e
+    path: Assets/Scenes/IngameContent/Challenges/Lvl35DoorParty.unity
+    guid: 05862e5dd75c74d11ae3c49bcc86bde6
   - enabled: 1
     path: Assets/Scenes/IngameContent/Challenges/Lvl32IcicleParty.unity
     guid: c57ea4d6b6c3d4eb59c51a937aded06c
   - enabled: 1
-    path: Assets/Scenes/IngameContent/Challenges/Lvl33DroneParty.unity
-    guid: 56952665be14c40d9a7c42daff2cb6e7
-  - enabled: 1
     path: Assets/Scenes/IngameContent/Challenges/Lvl34ClickBait.unity
     guid: cc3ddc2655e01482b8085b699593440b
   - enabled: 1
-    path: Assets/Scenes/IngameContent/Challenges/Lvl35DoorParty.unity
-    guid: 05862e5dd75c74d11ae3c49bcc86bde6
+    path: Assets/Scenes/IngameContent/Challenges/Lvl33DroneParty.unity
+    guid: 56952665be14c40d9a7c42daff2cb6e7
   - enabled: 1
     path: Assets/Scenes/IngameContent/Challenges/Lvl36TheDragon.unity
     guid: 820ebdec4cd9343e199ce8b70454f37c
