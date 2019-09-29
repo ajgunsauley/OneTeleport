@@ -259,7 +259,7 @@ PrefabInstance:
     - target: {fileID: 5461180502387090788, guid: 39ba42f1dd72b4e15a4ee48a7270248c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5461180502387090788, guid: 39ba42f1dd72b4e15a4ee48a7270248c,
         type: 3}
@@ -320,7 +320,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &479543430
 PrefabInstance:
@@ -479,75 +479,146 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e50b5a6b1135bfc4d9bf4ced2ebf0564, type: 3}
---- !u!1001 &1295786142
-PrefabInstance:
+--- !u!1 &1186902234
+GameObject:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5287051827926943153, guid: bfe814cdf62f541378d443dbf0421a94,
-        type: 3}
-      propertyPath: m_Name
-      value: InfiniteMusic
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287051827926943154, guid: bfe814cdf62f541378d443dbf0421a94,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -8.015279
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287051827926943154, guid: bfe814cdf62f541378d443dbf0421a94,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.5061522
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287051827926943154, guid: bfe814cdf62f541378d443dbf0421a94,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287051827926943154, guid: bfe814cdf62f541378d443dbf0421a94,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287051827926943154, guid: bfe814cdf62f541378d443dbf0421a94,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287051827926943154, guid: bfe814cdf62f541378d443dbf0421a94,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287051827926943154, guid: bfe814cdf62f541378d443dbf0421a94,
-        type: 3}
-      propertyPath: m_LocalRotation.w
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1186902236}
+  - component: {fileID: 1186902235}
+  - component: {fileID: 1186902237}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1186902235
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186902234}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a4dd3ff54b729448aa95beda784004d8, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287051827926943154, guid: bfe814cdf62f541378d443dbf0421a94,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287051827926943154, guid: bfe814cdf62f541378d443dbf0421a94,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287051827926943154, guid: bfe814cdf62f541378d443dbf0421a94,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5287051827926943154, guid: bfe814cdf62f541378d443dbf0421a94,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
       value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bfe814cdf62f541378d443dbf0421a94, type: 3}
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1186902236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186902234}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.015251, y: 0.16565159, z: -54.666737}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1186902237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186902234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a8cf740207240148909803b21ef4dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1304225270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -560,6 +631,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
+        type: 3}
+      propertyPath: m_Text
+      value: CHUNKY BOI FREE FROM SPACE GULAG.  CHUNKY BOI BIG WINNER
+      objectReference: {fileID: 0}
     - target: {fileID: 7033210125418564276, guid: fd19b7cff6dd665499f4206f5611a5cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -598,7 +694,7 @@ PrefabInstance:
     - target: {fileID: 7033210125418564276, guid: fd19b7cff6dd665499f4206f5611a5cd,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7033210125418564276, guid: fd19b7cff6dd665499f4206f5611a5cd,
         type: 3}
@@ -664,31 +760,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
-        type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 56
-      objectReference: {fileID: 0}
-    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
-        type: 3}
-      propertyPath: m_FontData.m_MinSize
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
-        type: 3}
-      propertyPath: m_Text
-      value: CHUNKY BOI FREE FROM SPACE GULAG.  CHUNKY BOI BIG WINNER
       objectReference: {fileID: 0}
     - target: {fileID: 7033210124191551095, guid: fd19b7cff6dd665499f4206f5611a5cd,
         type: 3}
@@ -836,7 +907,7 @@ PrefabInstance:
     - target: {fileID: 6725636055649439274, guid: 968991bb5bcde4db089deeea5f589bac,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6725636055649439274, guid: 968991bb5bcde4db089deeea5f589bac,
         type: 3}

@@ -24,8 +24,8 @@ public class EndStateController : MonoBehaviour
         if (Input.GetButtonDown("Fire1") & levelComplete == true)
         {
             // Clear music for the next level
-			GameObject music = GameObject.FindGameObjectWithTag("Music");
-            if (music) Destroy(music.gameObject);
+			InfiniteMusic music = GameObject.FindGameObjectWithTag("Music").GetComponent<InfiniteMusic>();
+            if (music) music.PlayNext();
 
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
