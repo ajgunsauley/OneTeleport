@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class IcicleController : MonoBehaviour, ISwapResponder {
     //public UIController UI;
-    public EndStateController endStateController;
     public LayerMask rayFallingMask;
     public float gigglingTime = .2f;
     public Collider2D droneCollider;
@@ -99,7 +98,6 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
             // Hitting poor chunky boy
             if (other.name.StartsWith( "Hero", System.StringComparison.Ordinal)) {
                 other.GetComponent<HeroController>().Die(false);
-                ic_.endStateController.FailLevel();
             }
             // Hitting a crate/drone
             else if (other.name.StartsWith( "Crate", System.StringComparison.Ordinal) || other.name.StartsWith( "Drone", System.StringComparison.Ordinal))
