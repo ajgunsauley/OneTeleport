@@ -172,7 +172,7 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
         breakSound = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
 
-        stateManager_ = new StateManager();
+        stateManager_ = gameObject.AddComponent<StateManager>();
         stateManager_.Push(new StateDetect(this));
     }
 

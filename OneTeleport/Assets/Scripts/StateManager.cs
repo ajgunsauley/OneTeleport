@@ -19,7 +19,7 @@ public abstract class State {
     public virtual void OnTriggerExit2D(Collider2D other) { }
 }
 
-public class StateManager {
+public class StateManager : MonoBehaviour {
     private LinkedList<State> states_;
 
     private class DefaultState : State { }
@@ -73,6 +73,8 @@ public class StateManager {
         states_.AddFirst(state);
         state.OnEnable();
         state.OnStart();
+
+        // Debug.Log(current.GetType().ToString() + " => " + state.GetType().ToString());
 
         return current;
     }
