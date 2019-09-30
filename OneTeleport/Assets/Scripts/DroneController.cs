@@ -6,6 +6,9 @@ public class DroneController : MonoBehaviour, ISwapResponder {
     Rigidbody2D rbody;
     public float speed = 1f;
 
+    [Range(0f, 1f)]
+    public float bounceSensitivity = .99f;
+
     private Vector2 direction = Vector2.right;
     private float switchTimer;
 
@@ -26,7 +29,7 @@ public class DroneController : MonoBehaviour, ISwapResponder {
         // Restore roaming constraints
         rbody.constraints = roamingConstraints;
 
-        if (Time.time > switchTimer && rbody.velocity.sqrMagnitude < speed * speed * .99f) {
+        if (Time.time > switchTimer && rbody.velocity.sqrMagnitude < speed * speed * bounceSensitivity) {
             switchTimer = Time.time + .1f;
             RotateDrone();
         }
