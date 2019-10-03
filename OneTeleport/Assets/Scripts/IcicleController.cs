@@ -3,24 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[System.Serializable]
-public struct BreakParams {
-    public string animationTrigger;
-    public AudioClip sfx;
-    public Vector2 pitchRange;
-}
-
 public class IcicleController : MonoBehaviour, ISwapResponder {
     //public UIController UI;
     public LayerMask rayFallingMask;
     public float gigglingTime = .2f;
-    public BreakParams breaking, melting;
 
     [HideInInspector]
     public Collider2D droneCollider;
 
+    public AudioClip breakClip;
+    public Vector2 breakPitchRange;
+    public AudioClip meltClip;
+    public Vector2 meltPitchRange;
+
     private Rigidbody2D rbody;
-    private AudioSource breakSource;
+    private float fallingTimer;
+    private bool wasSwapped;
+    private bool isFalling;
+
+    private AudioSource breakSound;
     private Animator animator;
 
     private StateManager stateManager_;
@@ -166,19 +167,20 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
         public override void OnCollisionEnter2D(Collision2D collision) { }
 
         public override void OnStart() {
-            BreakParams bp = (cause_ == BreakCause.Break) ? ic_.breaking : ic_.melting;
-
             // Setup sound
-            ic_.breakSource.pitch = Random.Range(bp.pitchRange.x, bp.pitchRange.y);
-            ic_.breakSource.clip = bp.sfx;
-            ic_.breakSource.Play();
+            Vector2 pitchRange = (cause_ == BreakCause.Break)
+                ? ic_.breakPitchRange : ic_.meltPitchRange;
+            ic_.breakSound.pitch = Random.Range(pitchRange.x, pitchRange.y);
+            ic_.breakSound.clip = (cause_ == BreakCause.Break)
+                ? ic_.breakClip : ic_.meltClip;
+            ic_.breakSound.Play();
 
             // Disable components that affect the game
             ic_.rbody.simulated = false;
             foreach (var col in ic_.GetComponentsInChildren<Collider2D>())
                 col.enabled = false;
 
-            ic_.animator.SetTrigger(bp.animationTrigger);
+            ic_.animator.SetTrigger((cause_ == BreakCause.Break) ? "Break" : "Melt");
 
             Destroy(ic_.gameObject, 2f);
         }
@@ -187,7 +189,7 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
     // Start is called before the first frame update
     void Start() {
         rbody = GetComponent<Rigidbody2D>();
-        breakSource = GetComponent<AudioSource>();
+        breakSound = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
 
         stateManager_ = gameObject.AddComponent<StateManager>();
