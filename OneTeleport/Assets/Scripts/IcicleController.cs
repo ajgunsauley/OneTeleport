@@ -7,7 +7,14 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
     //public UIController UI;
     public LayerMask rayFallingMask;
     public float gigglingTime = .2f;
+
+    [HideInInspector]
     public Collider2D droneCollider;
+
+    public AudioClip breakClip;
+    public Vector2 breakPitchRange;
+    public AudioClip meltClip;
+    public Vector2 meltPitchRange;
 
     private Rigidbody2D rbody;
     private float fallingTimer;
@@ -96,12 +103,14 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
         public override void OnCollisionEnter2D(Collision2D collision) {
             Collider2D other = collision.collider;
             // Hitting poor chunky boy
-            if (other.name.StartsWith( "Hero", System.StringComparison.Ordinal)) {
+            if (other.name.StartsWith("Hero", System.StringComparison.Ordinal)) {
                 other.GetComponent<HeroController>().Die(false);
             }
             // Hitting a crate/drone
-            else if (other.name.StartsWith( "Crate", System.StringComparison.Ordinal) || other.name.StartsWith( "Drone", System.StringComparison.Ordinal))
+            else if (other.name.StartsWith("Crate", System.StringComparison.Ordinal) || other.name.StartsWith("Drone", System.StringComparison.Ordinal))
                 Destroy(other.gameObject);
+            else if (other.name.StartsWith("Lava", System.StringComparison.Ordinal))
+                ic_.Break(BreakCause.Melt);
             // We get rekt
             else
                 ic_.Break();
@@ -149,20 +158,31 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
     }
 
     private class StateBreak : IcicleState {
-        public StateBreak(IcicleController ic) : base(ic) { }
+        private BreakCause cause_ = BreakCause.Break;
+        public StateBreak(IcicleController ic, BreakCause cause = BreakCause.Break) : base(ic) {
+            cause_ = cause;
+        }
 
         public override void Swapped(GameObject hero) { }
         public override void OnCollisionEnter2D(Collision2D collision) { }
 
         public override void OnStart() {
+            // Setup sound
+            Vector2 pitchRange = (cause_ == BreakCause.Break)
+                ? ic_.breakPitchRange : ic_.meltPitchRange;
+            ic_.breakSound.pitch = Random.Range(pitchRange.x, pitchRange.y);
+            ic_.breakSound.clip = (cause_ == BreakCause.Break)
+                ? ic_.breakClip : ic_.meltClip;
             ic_.breakSound.Play();
 
             // Disable components that affect the game
-            ic_.GetComponentInChildren<SpriteRenderer>().enabled = false;
+            ic_.rbody.simulated = false;
             foreach (var col in ic_.GetComponentsInChildren<Collider2D>())
                 col.enabled = false;
 
-            Destroy(ic_.gameObject, 1f);
+            ic_.animator.SetTrigger((cause_ == BreakCause.Break) ? "Break" : "Melt");
+
+            Destroy(ic_.gameObject, 2f);
         }
     }
 
@@ -206,7 +226,8 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
         stateManager_.Swap(new StateFalling(this));
     }
 
-    public void Break() {
-        stateManager_.Swap(new StateBreak(this));
+    public enum BreakCause { Break, Melt };
+    public void Break(BreakCause cause = BreakCause.Break) {
+        stateManager_.Swap(new StateBreak(this, cause));
     }
 }

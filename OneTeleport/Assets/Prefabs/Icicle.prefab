@@ -187,12 +187,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2756b038ae87c4d40b01db77da23d339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endStateController: {fileID: 0}
   rayFallingMask:
     serializedVersion: 2
     m_Bits: 512
   gigglingTime: 0.4
   droneCollider: {fileID: 3723166974136812330}
+  breakClip: {fileID: 8300000, guid: a4dd3ff54b729448aa95beda784004d8, type: 3}
+  breakPitchRange: {x: 2, y: 2.5}
+  meltClip: {fileID: 8300000, guid: 208affb76491947fc87cf137cdd5b3e8, type: 3}
+  meltPitchRange: {x: 0.7, y: 1.2}
 --- !u!95 &5563748354698536531
 Animator:
   serializedVersion: 3
@@ -222,7 +225,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a4dd3ff54b729448aa95beda784004d8, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 2.35
