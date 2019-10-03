@@ -507,7 +507,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a4dd3ff54b729448aa95beda784004d8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 37d9abfa315314de1b6b0e03e03134a9, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -631,31 +631,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
-        type: 3}
-      propertyPath: m_FontData.m_MaxSize
-      value: 56
-      objectReference: {fileID: 0}
-    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
-        type: 3}
-      propertyPath: m_FontData.m_MinSize
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
-        type: 3}
-      propertyPath: m_Text
-      value: CHUNKY BOI FREE FROM SPACE GULAG.  CHUNKY BOI BIG WINNER
-      objectReference: {fileID: 0}
     - target: {fileID: 7033210125418564276, guid: fd19b7cff6dd665499f4206f5611a5cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -760,6 +735,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
+        type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
+        type: 3}
+      propertyPath: m_Text
+      value: CHUNKY BOI FREE FROM SPACE GULAG.  CHUNKY BOI BIG WINNER
       objectReference: {fileID: 0}
     - target: {fileID: 7033210124191551095, guid: fd19b7cff6dd665499f4206f5611a5cd,
         type: 3}
