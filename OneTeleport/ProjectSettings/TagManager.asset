@@ -51,14 +51,14 @@ TagManager:
   - name: Environment
     uniqueID: 2336701765
     locked: 0
+  - name: Lava
+    uniqueID: 571466535
+    locked: 0
   - name: Terrain
     uniqueID: 1450373729
     locked: 0
   - name: Objects
     uniqueID: 2649813221
-    locked: 0
-  - name: Lava
-    uniqueID: 571466535
     locked: 0
   - name: Decoration
     uniqueID: 1679130979
