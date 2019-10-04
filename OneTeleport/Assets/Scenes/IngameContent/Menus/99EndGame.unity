@@ -759,7 +759,8 @@ PrefabInstance:
     - target: {fileID: 7033210124191551094, guid: fd19b7cff6dd665499f4206f5611a5cd,
         type: 3}
       propertyPath: m_Text
-      value: CHUNKY BOI FREE FROM SPACE GULAG.  CHUNKY BOI BIG WINNER
+      value: "YOU WIN!!!! CONGRATULATIONS!!!!\n\u0422\u042B \u041F\u041E\u0411\u0415\u0414\u0418\u041B!!!!
+        \u041F\u041E\u0417\u0414\u0420\u0410\u0412\u041B\u042F\u0415\u041C!!!!"
       objectReference: {fileID: 0}
     - target: {fileID: 7033210124191551095, guid: fd19b7cff6dd665499f4206f5611a5cd,
         type: 3}
@@ -854,6 +855,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6383513033900121308, guid: 9475b0fe87dcd8d45a9790d516db6149,
+        type: 3}
+      propertyPath: speed
+      value: 0.555
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9475b0fe87dcd8d45a9790d516db6149, type: 3}
