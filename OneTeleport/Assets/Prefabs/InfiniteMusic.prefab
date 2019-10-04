@@ -42,7 +42,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 906551e2cfb7943ce8cd61a212f01544, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.4
   m_Pitch: 1
@@ -142,11 +142,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   songs:
   - introOffset: 0
-    introClip: {fileID: 0}
-    loopClip: {fileID: 8300000, guid: 906551e2cfb7943ce8cd61a212f01544, type: 3}
+    introClip: {fileID: 8300000, guid: 70c9138d3b56b46de88430122a98b957, type: 3}
+    loopClip: {fileID: 8300000, guid: e5df60be1c5f1421ca1eae3e3520178c, type: 3}
   - introOffset: 0
-    introClip: {fileID: 0}
-    loopClip: {fileID: 8300000, guid: 690c55e51d68c4186beafa87a610741c, type: 3}
+    introClip: {fileID: 8300000, guid: 4c2f3c48d186e4c4ca661d3febe9884c, type: 3}
+    loopClip: {fileID: 8300000, guid: 9d4d698bc43224ac6997e0d7d56c2161, type: 3}
   - introOffset: 0
-    introClip: {fileID: 0}
-    loopClip: {fileID: 8300000, guid: 8e624ce52ae9a4861b38d4230852253d, type: 3}
+    introClip: {fileID: 8300000, guid: d2b373c02c76f49b98371058baba99fe, type: 3}
+    loopClip: {fileID: 8300000, guid: 0d5c9117e5689498ea8d36285b506304, type: 3}
