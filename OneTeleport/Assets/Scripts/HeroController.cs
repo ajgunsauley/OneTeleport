@@ -10,8 +10,8 @@ public class HeroController : MonoBehaviour {
     private EndStateController endState;
 
     // Group death SFX in the same object, detach it on deatch
-    public GameObject deathSFX;
-    public AudioSource glubSound, frySound, landSound;
+    public GameObject deathFX;
+    public AudioSource landSound;
     public LayerMask groundLayer;
     public Vector2 landDetectOffset, landShake;
 
@@ -26,21 +26,15 @@ public class HeroController : MonoBehaviour {
     }
 
     public void Die(bool playFrying = false) {
-        // Detach SFX so we can destroy the Hero imediatly, but keep the sound playing
-        deathSFX.transform.parent = null;
+        DeathSource killer = (playFrying) ? DeathSource.Lava : DeathSource.Icicle;
+        HeroDead dfx = Instantiate(deathFX, transform.position, Quaternion.identity)
+            .GetComponent<HeroDead>();
 
-        // Play the death sound
-        glubSound.enabled = true;
-        frySound.enabled = true;
-
-        glubSound.Play();
-        if (playFrying) frySound.Play();
-
-        // Destroy both object at different point in time
-        Destroy(gameObject);
-        Destroy(deathSFX, 1f);
+        dfx.Play(killer, transform.rotation);
 
         endState.FailLevel();
+
+        Destroy(gameObject);
     }
 
     public void Win() {
