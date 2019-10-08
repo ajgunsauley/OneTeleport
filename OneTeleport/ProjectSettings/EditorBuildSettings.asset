@@ -110,4 +110,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IngameContent/Menus/99EndGame.unity
     guid: dd39270c880911d41812139adc711f92
+  - enabled: 1
+    path: Assets/Scenes/IngameContent/Menus/Experimental End/X01GlgDock.unity
+    guid: 4c8f63fadefca40b7af90d0f5b01bbd3
+  - enabled: 1
+    path: Assets/Scenes/IngameContent/Menus/Experimental End/X02DroneTrip.unity
+    guid: ac5e0a1c535804dbb9315add3c249158
+  - enabled: 1
+    path: Assets/Scenes/IngameContent/Menus/Experimental End/X03DroneTrip 2.unity
+    guid: ae0224421ecf2437fba560179121a8ed
+  - enabled: 1
+    path: Assets/Scenes/IngameContent/Menus/Experimental End/X04DroneTrip 1.unity
+    guid: b75fe25ae9c2d4fa6bb4555dfe1d666d
+  - enabled: 1
+    path: Assets/Scenes/IngameContent/Menus/Experimental End/X05RblDock.unity
+    guid: d843a38bd00aa450bb8c36bd597cf344
   m_configObjects: {}
