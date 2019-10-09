@@ -64881,7 +64881,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 110.66, y: -15}
+  m_AnchoredPosition: {x: 110.65991, y: -15}
   m_SizeDelta: {x: 221.32, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1472099245
@@ -64915,9 +64915,10 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Press R to restart at any time
+  m_Text: "Press R to restart at any time.       \n\u0420 \u0434\u043B\u044F \u041C\u0430\u0442\u0435\u0440\u0438
+    \u0420\u043E\u0441\u0441\u0438\u0438"
 --- !u!222 &1472099246
 CanvasRenderer:
   m_ObjectHideFlags: 0

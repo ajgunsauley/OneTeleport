@@ -47,9 +47,9 @@ public class EndStateController : MonoBehaviour
         {
 
             other.GetComponent<HeroController>().Win();
-            ShowMessage(endgameText, "You win!  Click to continue...");
+            ShowMessage(endgameText, "Level complete!  Click to continue.... \nУровень пройден! Нажмите для продолжения....");
             levelComplete = true;
-
+            
         }
         
     }
@@ -58,7 +58,7 @@ public class EndStateController : MonoBehaviour
     public void FailLevel()
     {
         levelFailed = true;
-        ShowMessage(endgameText, "You lose!  Click to restart...");
+        ShowMessage(endgameText, "You lose!  Click to restart.... \nТы проиграл! Нажмите, чтобы перезагрузить ....");
     }
 
     //edit UI endgame message
