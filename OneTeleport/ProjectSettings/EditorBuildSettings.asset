@@ -132,6 +132,6 @@ EditorBuildSettings:
     path: Assets/Scenes/In Game Content/Main Ending/X04DroneTrip 1.unity
     guid: b75fe25ae9c2d4fa6bb4555dfe1d666d
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Main Ending/X04RblDock.unity
+    path: Assets/Scenes/In Game Content/Main Ending/X06RblDock.unity
     guid: d843a38bd00aa450bb8c36bd597cf344
   m_configObjects: {}
