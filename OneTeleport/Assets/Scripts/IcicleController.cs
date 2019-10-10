@@ -3,24 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[System.Serializable]
-public struct BreakParams {
-    public string animationTrigger;
-    public AudioClip sfx;
-    public Vector2 pitchRange;
-}
-
 public class IcicleController : MonoBehaviour, ISwapResponder {
     //public UIController UI;
     public LayerMask rayFallingMask;
     public float gigglingTime = .2f;
-    public BreakParams breaking, melting;
+
+    public GameObject destroyFX;
 
     [HideInInspector]
     public Collider2D droneCollider;
 
     private Rigidbody2D rbody;
-    private AudioSource breakSource;
     private Animator animator;
 
     private StateManager stateManager_;
@@ -166,28 +159,17 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
         public override void OnCollisionEnter2D(Collision2D collision) { }
 
         public override void OnStart() {
-            BreakParams bp = (cause_ == BreakCause.Break) ? ic_.breaking : ic_.melting;
+            Instantiate(ic_.destroyFX, ic_.transform.position, Quaternion.identity)
+                .GetComponent<IcicleDestroy>()
+                .Play(cause_);
 
-            // Setup sound
-            ic_.breakSource.pitch = Random.Range(bp.pitchRange.x, bp.pitchRange.y);
-            ic_.breakSource.clip = bp.sfx;
-            ic_.breakSource.Play();
-
-            // Disable components that affect the game
-            ic_.rbody.simulated = false;
-            foreach (var col in ic_.GetComponentsInChildren<Collider2D>())
-                col.enabled = false;
-
-            ic_.animator.SetTrigger(bp.animationTrigger);
-
-            Destroy(ic_.gameObject, 2f);
+            Destroy(ic_.gameObject);
         }
     }
 
     // Start is called before the first frame update
     void Start() {
         rbody = GetComponent<Rigidbody2D>();
-        breakSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
 
         stateManager_ = gameObject.AddComponent<StateManager>();
@@ -224,7 +206,6 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
         stateManager_.Swap(new StateFalling(this));
     }
 
-    public enum BreakCause { Break, Melt };
     public void Break(BreakCause cause = BreakCause.Break) {
         stateManager_.Swap(new StateBreak(this, cause));
     }

@@ -191,15 +191,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   gigglingTime: 0.4
+  destroyFX: {fileID: 1952921606469390895, guid: 7e0dc81804f1740a294e8d492af9abc0,
+    type: 3}
   droneCollider: {fileID: 3723166974136812330}
-  breaking:
-    animationTrigger: Break
-    sfx: {fileID: 8300000, guid: a4dd3ff54b729448aa95beda784004d8, type: 3}
-    pitchRange: {x: 2, y: 2.5}
-  melting:
-    animationTrigger: Melt
-    sfx: {fileID: 8300000, guid: 208affb76491947fc87cf137cdd5b3e8, type: 3}
-    pitchRange: {x: 0.7, y: 1.2}
 --- !u!95 &5563748354698536531
 Animator:
   serializedVersion: 3
