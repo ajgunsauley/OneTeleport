@@ -9,6 +9,7 @@ public class EndStateController : MonoBehaviour
     public Text endgameText;
     public bool levelComplete;
     public bool levelFailed;
+    public bool playNextTrack = true;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class EndStateController : MonoBehaviour
         {
             // Clear music for the next level
 			InfiniteMusic music = GameObject.FindGameObjectWithTag("Music").GetComponent<InfiniteMusic>();
-            if (music) music.PlayNext();
+            if (playNextTrack && music) music.PlayNext();
 
 			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
@@ -46,7 +47,8 @@ public class EndStateController : MonoBehaviour
         if (other.name.StartsWith("Hero", System.StringComparison.Ordinal))
         {
 
-            other.GetComponent<HeroController>().Win();
+            HeroController hc = other.GetComponent<HeroController>();
+            if (hc != null) hc.Win();
             ShowMessage(endgameText, "Level complete!  Click to continue.... \nУровень пройден! Нажмите для продолжения....");
             levelComplete = true;
             

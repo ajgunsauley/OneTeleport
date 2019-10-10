@@ -340,7 +340,7 @@ PrefabInstance:
     - target: {fileID: 8222128111660055771, guid: 42d3c76aa325c4240a5f1a3acf79a097,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.89
+      value: 23.58
       objectReference: {fileID: 0}
     - target: {fileID: 8222128111660055771, guid: 42d3c76aa325c4240a5f1a3acf79a097,
         type: 3}
@@ -396,6 +396,10 @@ PrefabInstance:
       propertyPath: endgameText
       value: 
       objectReference: {fileID: 501084357}
+    - target: {fileID: 795817539, guid: 42d3c76aa325c4240a5f1a3acf79a097, type: 3}
+      propertyPath: playNextTrack
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42d3c76aa325c4240a5f1a3acf79a097, type: 3}
 --- !u!1001 &669245789
@@ -472,9 +476,24 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: d06f9308d70a249b595ebb4d8d00b86f, type: 3}
     - target: {fileID: 5287051827926943152, guid: bfe814cdf62f541378d443dbf0421a94,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: songs.Array.size
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5287051827926943152, guid: bfe814cdf62f541378d443dbf0421a94,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287051827926943152, guid: bfe814cdf62f541378d443dbf0421a94,
+        type: 3}
+      propertyPath: songs.Array.data[0].introClip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5287051827926943152, guid: bfe814cdf62f541378d443dbf0421a94,
+        type: 3}
+      propertyPath: songs.Array.data[0].loopClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d06f9308d70a249b595ebb4d8d00b86f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfe814cdf62f541378d443dbf0421a94, type: 3}
 --- !u!1001 &868204077
@@ -7375,6 +7394,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 795817539, guid: 42d3c76aa325c4240a5f1a3acf79a097, type: 3}
       propertyPath: levelFailed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 795817539, guid: 42d3c76aa325c4240a5f1a3acf79a097, type: 3}
+      propertyPath: playNextTrack
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8222128111660055768, guid: 42d3c76aa325c4240a5f1a3acf79a097,
