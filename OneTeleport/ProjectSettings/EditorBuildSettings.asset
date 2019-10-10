@@ -45,7 +45,10 @@ EditorBuildSettings:
     path: Assets/Scenes/In Game Content/Intro Tutorials/Tut12LavaSecondary.unity
     guid: cc8c216556bc7ab4a85f5620f0edd8f4
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Intro Tutorials/Tut13DronePlatforms.unity
+    path: Assets/Scenes/In Game Content/Intro Tutorials/Tut13IcicleSteps.unity
+    guid: b478319265d78c14baa4db618f82c1e7
+  - enabled: 1
+    path: Assets/Scenes/In Game Content/Intro Tutorials/Tut14DronePlatforms.unity
     guid: a64f6976799722442850fef0f6a97e5b
   - enabled: 1
     path: Assets/Scenes/In Game Content/Level Challenges/Lvl01ThreeDoors.unity
@@ -128,9 +131,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/In Game Content/Main Ending/X03DroneTrip 2.unity
     guid: ae0224421ecf2437fba560179121a8ed
-  - enabled: 1
-    path: Assets/Scenes/In Game Content/Main Ending/X04DroneTrip 1.unity
-    guid: b75fe25ae9c2d4fa6bb4555dfe1d666d
   - enabled: 1
     path: Assets/Scenes/In Game Content/Main Ending/X06RblDock.unity
     guid: d843a38bd00aa450bb8c36bd597cf344
