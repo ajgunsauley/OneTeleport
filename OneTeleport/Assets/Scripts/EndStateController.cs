@@ -10,6 +10,7 @@ public class EndStateController : MonoBehaviour
     public bool levelComplete;
     public bool levelFailed;
     public bool playNextTrack = true;
+    public bool autoNextLevel = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,11 +25,7 @@ public class EndStateController : MonoBehaviour
         //We will need to edit how this works depending on how many levels we have.  Probably an input array
         if (Input.GetButtonDown("Fire1") & levelComplete == true)
         {
-            // Clear music for the next level
-			InfiniteMusic music = GameObject.FindGameObjectWithTag("Music").GetComponent<InfiniteMusic>();
-            if (playNextTrack && music) music.PlayNext();
-
-			SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            NextLevel();
         }
 
         if (Input.GetButtonDown("Fire1") & levelFailed == true)
@@ -41,17 +38,27 @@ public class EndStateController : MonoBehaviour
         }
     }
 
+    public void NextLevel() {
+        // Clear music for the next level
+        InfiniteMusic music = GameObject.FindGameObjectWithTag("Music").GetComponent<InfiniteMusic>();
+        if (playNextTrack && music) music.PlayNext();
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
     //enter the gate directly to win!
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.name.StartsWith("Hero", System.StringComparison.Ordinal))
         {
-
-            HeroController hc = other.GetComponent<HeroController>();
-            if (hc != null) hc.Win();
-            ShowMessage(endgameText, "Level complete!  Click to continue.... \nУровень пройден! Нажмите для продолжения....");
-            levelComplete = true;
-            
+            if (autoNextLevel) {
+                NextLevel();
+            } else {
+                HeroController hc = other.GetComponent<HeroController>();
+                if (hc != null) hc.Win();
+                ShowMessage(endgameText, "Level complete!  Click to continue.... \nУровень пройден! Нажмите для продолжения....");
+                levelComplete = true;
+            }
         }
         
     }
