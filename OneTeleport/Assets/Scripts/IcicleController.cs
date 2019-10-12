@@ -95,7 +95,6 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
         public override void OnTriggerEnter2D(Collider2D other) {
             if (other.name.StartsWith("Crate", System.StringComparison.Ordinal))
                 other.GetComponent<CrateController>().Break(BreakCause.Break);
-            Debug.Break();
         }
 
         public override void OnCollisionEnter2D(Collision2D collision) {
