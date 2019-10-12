@@ -31,6 +31,6 @@ public class IcicleDestroy : MonoBehaviour {
         sound.clip = bp.sfx;
         sound.Play();
 
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 5f);
     }
 }

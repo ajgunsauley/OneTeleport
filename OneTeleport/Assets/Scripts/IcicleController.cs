@@ -100,7 +100,9 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
                 ic_.Break();
             }
             // Hitting a crate/drone
-            else if (other.name.StartsWith("Crate", System.StringComparison.Ordinal) || other.name.StartsWith("Drone", System.StringComparison.Ordinal))
+            else if (other.name.StartsWith("Crate", System.StringComparison.Ordinal))
+                other.GetComponent<CrateController>().Break(BreakCause.Break);
+            else if (other.name.StartsWith("Drone", System.StringComparison.Ordinal))
                 Destroy(other.gameObject);
             else if (other.name.StartsWith("Lava", System.StringComparison.Ordinal))
                 ic_.Break(BreakCause.Melt);
@@ -137,7 +139,7 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
 
                 // Only destroy the crate if the icicle is above it!
                 if (icicleY > crateY)
-                    Destroy(other.gameObject);
+                    other.GetComponent<CrateController>().Break(BreakCause.Break);
             } else if (other.name.StartsWith( "Icicle", System.StringComparison.Ordinal)) {
                 ic_.Break();
                 other.GetComponent<IcicleController>().Break();
