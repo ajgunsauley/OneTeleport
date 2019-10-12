@@ -97,6 +97,7 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
             // Hitting poor chunky boy
             if (other.name.StartsWith("Hero", System.StringComparison.Ordinal)) {
                 other.GetComponent<HeroController>().Die(false);
+                ic_.Break();
             }
             // Hitting a crate/drone
             else if (other.name.StartsWith("Crate", System.StringComparison.Ordinal) || other.name.StartsWith("Drone", System.StringComparison.Ordinal))
