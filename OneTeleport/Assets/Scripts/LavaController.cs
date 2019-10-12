@@ -7,6 +7,8 @@ public class LavaController : MonoBehaviour {
         GameObject other = collision.gameObject;
         if (other.name.StartsWith("Hero", System.StringComparison.Ordinal)) {
             other.GetComponent<HeroController>().Die(true);
+        } else if (other.name.StartsWith("Crate", System.StringComparison.Ordinal)) {
+            other.GetComponent<CrateController>().Break(BreakCause.Melt);
         }
     }
 }
