@@ -50,7 +50,7 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
 
         public override void OnCollisionEnter2D(Collision2D collision) {
             string name = collision.collider.name;
-            if (name.StartsWith( "Drone", System.StringComparison.Ordinal) || name.StartsWith( "Crate", System.StringComparison.Ordinal))
+            if (name.StartsWith("Drone", System.StringComparison.Ordinal) || name.StartsWith("Crate", System.StringComparison.Ordinal))
                 ic_.Break();
         }
     }
@@ -75,7 +75,7 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
 
         public override void OnCollisionEnter2D(Collision2D collision) {
             string name = collision.collider.name;
-            if (name.StartsWith( "Drone", System.StringComparison.Ordinal) || name.StartsWith( "Crate", System.StringComparison.Ordinal))
+            if (name.StartsWith("Drone", System.StringComparison.Ordinal) || name.StartsWith("Crate", System.StringComparison.Ordinal))
                 ic_.Break();
         }
     }
@@ -133,25 +133,25 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
 
         public override void OnCollisionEnter2D(Collision2D collision) {
             Collider2D other = collision.collider;
-            if (other.name.StartsWith( "Drone", System.StringComparison.Ordinal)) {
+            if (other.name.StartsWith("Drone", System.StringComparison.Ordinal)) {
                 ic_.Break();
                 if (Time.time < breakDroneTimer)
                     Destroy(other.gameObject);
-            } else if (other.name.StartsWith( "Crate", System.StringComparison.Ordinal)) {
+            } else if (other.name.StartsWith("Crate", System.StringComparison.Ordinal)) {
                 float icicleY = ic_.rbody.position.y;
                 float crateY = other.attachedRigidbody.position.y;
 
                 // Only destroy the crate if the icicle is above it!
                 if (icicleY > crateY)
                     other.GetComponent<CrateController>().Break(BreakCause.Break);
-            } else if (other.name.StartsWith( "Icicle", System.StringComparison.Ordinal)) {
+            } else if (other.name.StartsWith("Icicle", System.StringComparison.Ordinal)) {
                 ic_.Break();
                 other.GetComponent<IcicleController>().Break();
             }
         }
 
         public override void OnTriggerEnter2D(Collider2D other) {
-            if (other.name.StartsWith( "Button", System.StringComparison.Ordinal))
+            if (other.name.StartsWith("Button", System.StringComparison.Ordinal))
                 ic_.Break();
         }
     }
