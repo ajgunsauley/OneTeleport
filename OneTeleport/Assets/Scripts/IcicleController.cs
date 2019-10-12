@@ -92,6 +92,12 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
             ic_.rbody.constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
         }
 
+        public override void OnTriggerEnter2D(Collider2D other) {
+            if (other.name.StartsWith("Crate", System.StringComparison.Ordinal))
+                other.GetComponent<CrateController>().Break(BreakCause.Break);
+            Debug.Break();
+        }
+
         public override void OnCollisionEnter2D(Collision2D collision) {
             Collider2D other = collision.collider;
             // Hitting poor chunky boy
@@ -102,8 +108,6 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
             // Hitting a crate/drone
             else if (other.name.StartsWith("Crate", System.StringComparison.Ordinal))
                 other.GetComponent<CrateController>().Break(BreakCause.Break);
-            else if (other.name.StartsWith("Drone", System.StringComparison.Ordinal))
-                Destroy(other.gameObject);
             else if (other.name.StartsWith("Lava", System.StringComparison.Ordinal))
                 ic_.Break(BreakCause.Melt);
             // We get rekt
