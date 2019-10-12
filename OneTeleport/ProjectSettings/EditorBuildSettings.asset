@@ -126,24 +126,27 @@ EditorBuildSettings:
     path: Assets/Scenes/In Game Content/Main Ending Scenes/X01GlgDock.unity
     guid: 4c8f63fadefca40b7af90d0f5b01bbd3
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Main Ending Scenes/X02DroneTrip1.unity
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X02FastDrone.unity
     guid: ac5e0a1c535804dbb9315add3c249158
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Main Ending Scenes/X03DroneTrip2.unity
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X03Nebula.unity
     guid: 4afb583d115284d09b950b0ead7a11a8
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Main Ending Scenes/X04DroneTrip3.unity
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X04Sputnik.unity
     guid: fe3c952473ed14c8fb28ec0144c71892
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Main Ending Scenes/X05DroneToPod.unity
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X05PodDepot.unity
     guid: ae0224421ecf2437fba560179121a8ed
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Main Ending Scenes/X06PodTrip 1.unity
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X06FastPod.unity
+    guid: 0013a3cc7853f473faa7f93d763781f1
+  - enabled: 1
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X07IronCurtain.unity
     guid: f54b9606aa15348dcb45edc763d0f2a5
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Main Ending Scenes/X07PodTrip.unity
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X08Meteorites.unity
     guid: 9bb337bfef3044bc3b8e72affb112ec0
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Main Ending Scenes/X08RblDock.unity
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X09RblDock.unity
     guid: d843a38bd00aa450bb8c36bd597cf344
   m_configObjects: {}
