@@ -6,7 +6,7 @@ public class CrateController : MonoBehaviour {
     public GameObject destroyFX;
 
     public void Break(BreakCause cause) {
-        Instantiate(destroyFX, transform.position, transform.rotation)
+        Instantiate(destroyFX, transform.position, Quaternion.identity)
             .GetComponent<CrateDestroy>()
             .Play(cause);
 
