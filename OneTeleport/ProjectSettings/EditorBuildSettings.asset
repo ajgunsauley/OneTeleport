@@ -78,52 +78,55 @@ EditorBuildSettings:
     path: Assets/Scenes/In Game Content/Level Challenges/Lvl09IceSlide.unity
     guid: 2f7f2dd71a35f4a69a91aa77a32096cd
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl10TheReactor.unity
-    guid: d7a2c360c751c4291ae37998bb36b702
-  - enabled: 1
     path: Assets/Scenes/In Game Content/Level Challenges/Lvl11FourXXXX.unity
     guid: e610478740a444bc48915e79bf894004
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl12InACloset.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl12UpDown.unity
+    guid: 8897448c052cd43a5a259141d71bc8d0
+  - enabled: 1
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl13InACloset.unity
     guid: c1ac7028ac2444363bb6aca5e10b71a1
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl13ntroBorg.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl14ntroBorg.unity
     guid: 2b7075b59267e40168c60bb29996772e
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl14XBoxDrop.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl15XBoxDrop.unity
     guid: 1b80b0644647a4ab3a94cd822f20543c
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl15ThreeFloors.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl16TheReactor.unity
+    guid: d7a2c360c751c4291ae37998bb36b702
+  - enabled: 1
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl17ThreeFloors.unity
     guid: 111693800331d437790a90e3a63b6563
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl16Partitions.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl18Partitions.unity
     guid: 1c279ee8995064ab2b33a6b30ddf3bda
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl17CrateTag.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl20CrateTag.unity
     guid: 10776a18ec9ef470dbaffbe07d12f75e
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl18EightIcicles.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl19EightIcicles.unity
     guid: 1472bd8ebc9304933be81a0c8158e830
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl19DroneAmis.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lv20DroneAmis.unity
     guid: 1b1583573a7de4a0f9de207267067f05
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl20DoorParty.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl21DoorParty.unity
     guid: 05862e5dd75c74d11ae3c49bcc86bde6
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl21IcicleParty.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl22IcicleParty.unity
     guid: c57ea4d6b6c3d4eb59c51a937aded06c
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl22BuildIt.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl23BuildIt.unity
     guid: 38484a17c952d4c128ccc0a5f321efd8
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl23ClickBait.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl24ClickBait.unity
     guid: cc3ddc2655e01482b8085b699593440b
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl24DroneParty.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl25DroneParty.unity
     guid: 56952665be14c40d9a7c42daff2cb6e7
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl25TheDragon.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl26TheDragon.unity
     guid: 820ebdec4cd9343e199ce8b70454f37c
   - enabled: 1
     path: Assets/Scenes/In Game Content/Main Ending Scenes/X01GlgDock.unity
