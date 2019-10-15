@@ -78,6 +78,9 @@ EditorBuildSettings:
     path: Assets/Scenes/In Game Content/Level Challenges/Lvl09IceSlide.unity
     guid: 2f7f2dd71a35f4a69a91aa77a32096cd
   - enabled: 1
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl10TrashBin.unity
+    guid: 8046a9f07c85443dd9d084aa52d81e5a
+  - enabled: 1
     path: Assets/Scenes/In Game Content/Level Challenges/Lvl11FourXXXX.unity
     guid: e610478740a444bc48915e79bf894004
   - enabled: 1
