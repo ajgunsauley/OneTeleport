@@ -114,13 +114,16 @@ EditorBuildSettings:
     path: Assets/Scenes/In Game Content/Level Challenges/Lvl21IcicleParty.unity
     guid: c57ea4d6b6c3d4eb59c51a937aded06c
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl22ClickBait.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl22BuildIt.unity
+    guid: 38484a17c952d4c128ccc0a5f321efd8
+  - enabled: 1
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl23ClickBait.unity
     guid: cc3ddc2655e01482b8085b699593440b
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl23DroneParty.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl24DroneParty.unity
     guid: 56952665be14c40d9a7c42daff2cb6e7
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl24TheDragon.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl25TheDragon.unity
     guid: 820ebdec4cd9343e199ce8b70454f37c
   - enabled: 1
     path: Assets/Scenes/In Game Content/Main Ending Scenes/X01GlgDock.unity
