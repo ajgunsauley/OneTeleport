@@ -129,9 +129,6 @@ EditorBuildSettings:
     path: Assets/Scenes/In Game Content/Level Challenges/Lvl25DroneParty.unity
     guid: 56952665be14c40d9a7c42daff2cb6e7
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl26TheDragon.unity
-    guid: 820ebdec4cd9343e199ce8b70454f37c
-  - enabled: 1
     path: Assets/Scenes/In Game Content/Main Ending Scenes/X01GlgDock.unity
     guid: 4c8f63fadefca40b7af90d0f5b01bbd3
   - enabled: 1
