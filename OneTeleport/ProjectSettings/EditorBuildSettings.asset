@@ -150,7 +150,7 @@ EditorBuildSettings:
     path: Assets/Scenes/In Game Content/Main Ending Scenes/X07IronCurtain.unity
     guid: f54b9606aa15348dcb45edc763d0f2a5
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Main Ending Scenes/X08Meteorites.unity
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X08Neptune.unity
     guid: 9bb337bfef3044bc3b8e72affb112ec0
   - enabled: 1
     path: Assets/Scenes/In Game Content/Main Ending Scenes/X09RblSpace.unity
