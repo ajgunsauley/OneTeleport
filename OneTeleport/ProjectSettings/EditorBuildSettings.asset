@@ -147,18 +147,33 @@ EditorBuildSettings:
     path: Assets/Scenes/In Game Content/Main Ending Scenes/X06FastPod.unity
     guid: 0013a3cc7853f473faa7f93d763781f1
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Main Ending Scenes/X07IronCurtain.unity
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X07IronBelt.unity
     guid: f54b9606aa15348dcb45edc763d0f2a5
   - enabled: 1
     path: Assets/Scenes/In Game Content/Main Ending Scenes/X08Neptune.unity
     guid: 9bb337bfef3044bc3b8e72affb112ec0
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Main Ending Scenes/X09RblSpace.unity
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X09Greeting.unity
     guid: d843a38bd00aa450bb8c36bd597cf344
   - enabled: 1
     path: Assets/Scenes/In Game Content/Main Ending Scenes/X10RblDock.unity
     guid: 193b16e7ba59947de8f9fb89532e0dd9
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Main Ending Scenes/X11PodPad.unity
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X11Hangout.unity
+    guid: 660041fb2ee0a4e3a9fb0faecf8d229d
+  - enabled: 1
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X12PodPad.unity
     guid: 09457e431a14d4e0e8a0b1b5238dbeef
+  - enabled: 1
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X13Recipe.unity
+    guid: d51e7b44159704b6a928f4f3d40e3797
+  - enabled: 1
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X14Debrief.unity
+    guid: 4aff2a919201742778a47779e31b0c8a
+  - enabled: 1
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X15OffDuty.unity
+    guid: b4e9f996396a3425b8904834a244137b
+  - enabled: 1
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X16StripDown.unity
+    guid: d366d38b6288b46da80a064427c21a94
   m_configObjects: {}
