@@ -176,4 +176,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/In Game Content/Main Ending Scenes/X16StripDown.unity
     guid: d366d38b6288b46da80a064427c21a94
+  - enabled: 1
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X17ForEarth.unity
+    guid: fdc19dc9d97e24fb1b5301a0a8f270da
+  - enabled: 1
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X18Home.unity
+    guid: d14c0ee6769b548f8ae90a6344870edf
+  - enabled: 1
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X19Dining.unity
+    guid: 90f7e85cd5d7d4cefa01ef5ca8282209
+  - enabled: 1
+    path: Assets/Scenes/In Game Content/Main Ending Scenes/X20WinkWink.unity
+    guid: 584ed45f1e3984c5984c360db598aa50
   m_configObjects: {}
