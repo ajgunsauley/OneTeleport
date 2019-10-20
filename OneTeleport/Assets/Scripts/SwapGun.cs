@@ -76,9 +76,16 @@ public class SwapGun : MonoBehaviour {
             if (swapObject != null) {
                 swapObject.constraints = RigidbodyConstraints2D.None;
 
-                Vector2 tmpPosition = rbody.position;
-                rbody.position = swapObject.position;
-                swapObject.position = tmpPosition;
+                Vector2 sourcePosition = rbody.position;
+                Vector2 targetPosition = swapObject.position;
+
+                if (swapObject.name.StartsWith("Drone", System.StringComparison.Ordinal)) {
+                    targetPosition.x = Mathf.Floor(2f * targetPosition.x + 0.5f) / 2f;
+                    targetPosition.y = Mathf.Floor(2f * targetPosition.y + 0.5f) / 2f;
+                }
+
+                rbody.position = targetPosition;
+                swapObject.position = sourcePosition;
 
                 ISwapResponder sr = swapObject.gameObject.GetComponent<ISwapResponder>();
                 if (sr != null) sr.Swapped(gameObject);
