@@ -9,6 +9,8 @@ public class DroneController : MonoBehaviour, ISwapResponder {
     [Range(0f, 1f)]
     public float bounceSensitivity = .99f;
 
+    public GameObject destroyFX;
+
     private Vector2 direction = Vector2.right;
     private float switchTimer;
 
@@ -49,5 +51,13 @@ public class DroneController : MonoBehaviour, ISwapResponder {
     public void Swapped(GameObject hero) {
         // Temporarily remove physic constraints
         rbody.constraints = swappingConstraints;
+    }
+
+    public void Break(BreakCause cause) {
+        Instantiate(destroyFX, transform.position, transform.rotation)
+            .GetComponent<DroneDestroy>()
+            .Play(cause);
+
+        Destroy(gameObject);
     }
 }

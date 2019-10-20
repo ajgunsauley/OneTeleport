@@ -107,6 +107,8 @@ public class IcicleController : MonoBehaviour, ISwapResponder {
             // Hitting a crate/drone
             else if (other.name.StartsWith("Crate", System.StringComparison.Ordinal))
                 other.GetComponent<CrateController>().Break(BreakCause.Break);
+            else if (other.name.StartsWith("Drone", System.StringComparison.Ordinal))
+                other.GetComponent<DroneController>().Break(BreakCause.Break);
             else if (other.name.StartsWith("Lava", System.StringComparison.Ordinal))
                 ic_.Break(BreakCause.Melt);
             // We get rekt
