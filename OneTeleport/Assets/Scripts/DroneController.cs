@@ -14,6 +14,8 @@ public class DroneController : MonoBehaviour, ISwapResponder {
     private Vector2 direction = Vector2.right;
     private float switchTimer;
 
+    private bool broken = false;
+
     private AudioSource pushSound;
 
     private readonly RigidbodyConstraints2D roamingConstraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionY;
@@ -54,6 +56,9 @@ public class DroneController : MonoBehaviour, ISwapResponder {
     }
 
     public void Break(BreakCause cause) {
+        if (broken) return;
+        broken = true;
+
         Instantiate(destroyFX, transform.position, transform.rotation)
             .GetComponent<DroneDestroy>()
             .Play(cause);
