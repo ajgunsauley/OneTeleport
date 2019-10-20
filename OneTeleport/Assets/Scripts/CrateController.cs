@@ -8,7 +8,7 @@ public class CrateController : MonoBehaviour {
     public void Break(BreakCause cause) {
         Instantiate(destroyFX, transform.position, Quaternion.identity)
             .GetComponent<CrateDestroy>()
-            .Play(cause);
+            .Play(cause, transform.rotation);
 
         Destroy(gameObject);
     }
