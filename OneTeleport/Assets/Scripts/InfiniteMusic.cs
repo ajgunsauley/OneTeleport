@@ -33,7 +33,7 @@ public class InfiniteMusic : MonoBehaviour {
                 song.loopClip.LoadAudioData();
         }
 
-        PlaySong(songIndex);
+        PlaySong(Random.Range(0, songs.Length));
     }
 
     public void PlayNext() {
