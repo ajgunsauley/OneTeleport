@@ -80,8 +80,8 @@ public class SwapGun : MonoBehaviour {
                 Vector2 targetPosition = swapObject.position;
 
                 if (swapObject.name.StartsWith("Drone", System.StringComparison.Ordinal)) {
-                    targetPosition.x = Mathf.Floor(2f * targetPosition.x + 0.5f) / 2f;
-                    targetPosition.y = Mathf.Floor(2f * targetPosition.y + 0.5f) / 2f;
+                    targetPosition.x = RoundCoord(targetPosition.x);
+                    targetPosition.y = RoundCoord(targetPosition.y);
                 }
 
                 rbody.position = targetPosition;
@@ -93,5 +93,9 @@ public class SwapGun : MonoBehaviour {
 
             doSwap = false;
         }
+    }
+
+    private float RoundCoord(float a) {
+        return Mathf.Floor(2f * a + 0.5f) / 2f;
     }
 }
