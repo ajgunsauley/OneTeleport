@@ -111,22 +111,22 @@ EditorBuildSettings:
     path: Assets/Scenes/In Game Content/Level Challenges/Lvl20CrateTag.unity
     guid: 10776a18ec9ef470dbaffbe07d12f75e
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl20DroneAmis.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl21DroneAmis.unity
     guid: 1b1583573a7de4a0f9de207267067f05
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl21DoorParty.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl22DoorParty.unity
     guid: 05862e5dd75c74d11ae3c49bcc86bde6
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl22IcicleParty.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl23IcicleParty.unity
     guid: c57ea4d6b6c3d4eb59c51a937aded06c
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl23BuildIt.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl24BuildIt.unity
     guid: 38484a17c952d4c128ccc0a5f321efd8
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl24ClickBait.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl25ClickBait.unity
     guid: cc3ddc2655e01482b8085b699593440b
   - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl25DroneParty.unity
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl26DroneParty.unity
     guid: 56952665be14c40d9a7c42daff2cb6e7
   - enabled: 1
     path: Assets/Scenes/In Game Content/Main Ending Scenes/X01GlgDock.unity
