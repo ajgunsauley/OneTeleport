@@ -60,6 +60,9 @@ EditorBuildSettings:
     path: Assets/Scenes/In Game Content/Level Challenges/Lvl03DroneBoat.unity
     guid: 0498b68821d954b26aaaf061202534ca
   - enabled: 1
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl03Balancing.unity
+    guid: bd30f9701979849a0927bb0b45812b5d
+  - enabled: 1
     path: Assets/Scenes/In Game Content/Level Challenges/Lvl04WhchSwtch.unity
     guid: f12dc87f8b3c64810b51f21d95651877
   - enabled: 1
