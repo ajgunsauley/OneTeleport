@@ -108,6 +108,9 @@ EditorBuildSettings:
     path: Assets/Scenes/In Game Content/Level Challenges/Lvl18Partitions.unity
     guid: 1c279ee8995064ab2b33a6b30ddf3bda
   - enabled: 1
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl17StepLadder.unity
+    guid: 6806e3c374962e541b14eddd078c6831
+  - enabled: 1
     path: Assets/Scenes/In Game Content/Level Challenges/Lvl19EightIcicles.unity
     guid: 1472bd8ebc9304933be81a0c8158e830
   - enabled: 1

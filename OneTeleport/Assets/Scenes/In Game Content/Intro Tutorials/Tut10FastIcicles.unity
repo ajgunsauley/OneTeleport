@@ -957,7 +957,7 @@ PrefabInstance:
     - target: {fileID: 5041619123812264951, guid: b31f14855768ddd478828aa5b589f52c,
         type: 3}
       propertyPath: gigglingTime
-      value: 3
+      value: 3.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b31f14855768ddd478828aa5b589f52c, type: 3}
@@ -1243,7 +1243,7 @@ PrefabInstance:
     - target: {fileID: 5041619123812264951, guid: b31f14855768ddd478828aa5b589f52c,
         type: 3}
       propertyPath: gigglingTime
-      value: 2
+      value: 2.15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b31f14855768ddd478828aa5b589f52c, type: 3}
