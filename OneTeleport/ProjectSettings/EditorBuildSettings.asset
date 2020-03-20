@@ -84,6 +84,9 @@ EditorBuildSettings:
     path: Assets/Scenes/In Game Content/Level Challenges/Lvl10TrashBin.unity
     guid: 8046a9f07c85443dd9d084aa52d81e5a
   - enabled: 1
+    path: Assets/Scenes/In Game Content/Level Challenges/Lvl11SwapUp.unity
+    guid: d73272d3387b647b584f23287c54b160
+  - enabled: 1
     path: Assets/Scenes/In Game Content/Level Challenges/Lvl11FourXXXX.unity
     guid: e610478740a444bc48915e79bf894004
   - enabled: 1
@@ -167,9 +170,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/In Game Content/Main Ending Scenes/X11Hangout.unity
     guid: 660041fb2ee0a4e3a9fb0faecf8d229d
-  - enabled: 1
-    path: Assets/Scenes/In Game Content/Level Challenges/Lvl11SwapUp.unity
-    guid: d73272d3387b647b584f23287c54b160
   - enabled: 1
     path: Assets/Scenes/In Game Content/Main Ending Scenes/X12PodPad.unity
     guid: 09457e431a14d4e0e8a0b1b5238dbeef
