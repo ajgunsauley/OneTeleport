@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour {
     public GameObject buttonPrefab;
     public GridLayoutGroup gridLayout;
+    public FadeManager fader;
     public string[] scenes;
 
 #if UNITY_EDITOR
@@ -69,6 +70,11 @@ public class LevelManager : MonoBehaviour {
 
     public void SelectLevel(string levelName) {
         Debug.Log(levelName, this);
-        SceneManager.LoadScene(levelName);
+        fader.FadeIn(() => StartCoroutine(AsyncLevelLoad(levelName)));
+    }
+
+    private IEnumerator AsyncLevelLoad(string levelName) {
+        SceneManager.LoadSceneAsync(levelName);
+        yield return null;
     }
 }

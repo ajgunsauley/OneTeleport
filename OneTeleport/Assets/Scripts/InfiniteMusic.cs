@@ -9,6 +9,7 @@ public struct Song {
 }
 
 public class InfiniteMusic : MonoBehaviour {
+    public bool forceNewMusic = false;
     public Song[] songs;
 
     private int songIndex;
@@ -18,8 +19,16 @@ public class InfiniteMusic : MonoBehaviour {
     void Start() {
         GameObject[] musics = GameObject.FindGameObjectsWithTag("Music");
         if (musics.Length > 1) {
-            Destroy(gameObject);
-            return;
+            if (forceNewMusic) {
+                foreach (var m in musics) {
+                    if (m == gameObject)
+                        continue;
+                    Destroy(m);
+                }
+            } else {
+                Destroy(gameObject);
+                return;
+            }
         }
 
         DontDestroyOnLoad(gameObject);

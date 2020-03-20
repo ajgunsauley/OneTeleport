@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/In Game Content/Chunky Menu/00Title.unity
     guid: 6321dc18ec6f34845866d1473a224807
   - enabled: 1
+    path: Assets/Scenes/In Game Content/Chunky Menu/00TitleLevelSelect.unity
+    guid: f493741e31f8ce04d8566f673d6e31a0
+  - enabled: 1
     path: Assets/Scenes/In Game Content/Intro Tutorials/Tut01BoxIntro.unity
     guid: c3651a15a2b49492184844aea354b80f
   - enabled: 1
