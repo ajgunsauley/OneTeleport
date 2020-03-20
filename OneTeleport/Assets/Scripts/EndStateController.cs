@@ -51,6 +51,7 @@ public class EndStateController : MonoBehaviour
     {
         if (other.name.StartsWith("Hero", System.StringComparison.Ordinal))
         {
+            PlayerPrefs.SetString("UnlockedLevel", SceneManager.GetActiveScene().name);
             if (autoNextLevel) {
                 NextLevel();
             } else {

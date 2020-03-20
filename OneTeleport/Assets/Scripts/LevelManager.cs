@@ -30,6 +30,11 @@ public class LevelManager : MonoBehaviour {
          LevelManager context = (LevelManager)command.context;
          context.scenes = ReadNames();
      }
+
+    [UnityEditor.MenuItem("CONTEXT/LevelManager/Delete Player Prefs")]
+    private static void DeletePlayerPrefs(UnityEditor.MenuCommand command) {
+        PlayerPrefs.DeleteAll();
+    }
      
      private void Reset()
      {
@@ -38,9 +43,24 @@ public class LevelManager : MonoBehaviour {
 #endif
 
     public void Start() {
+        string unlockedLevel = PlayerPrefs.GetString("UnlockedLevel", "[NewGame]");
+        Debug.Log("UnlockedLevel: " + unlockedLevel, this);
+        int unlockedSceneIndex = 1;
+
+        if (unlockedLevel != "[NewGame]") {
+            foreach (string scene in scenes) {
+                unlockedSceneIndex++;
+
+                if (scene == unlockedLevel)
+                    break;
+            }
+        }
+
         int sceneIndex = 1;
         foreach (string scene in scenes) {
             Button button = Instantiate(buttonPrefab, gridLayout.transform).GetComponent<Button>();
+            Debug.Log("Unlocked " + sceneIndex + " <= " + unlockedSceneIndex + ": " + (sceneIndex <= unlockedSceneIndex), this);
+            button.interactable = sceneIndex <= unlockedSceneIndex;
             button.onClick.AddListener(() => SelectLevel(scene));
             Text buttonText = button.GetComponentInChildren<Text>();
             buttonText.text = sceneIndex++.ToString();
