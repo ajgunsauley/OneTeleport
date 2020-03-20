@@ -1,0 +1,54 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class LevelManager : MonoBehaviour {
+    public GameObject buttonPrefab;
+    public GridLayoutGroup gridLayout;
+    public string[] scenes;
+
+#if UNITY_EDITOR
+     private static string[] ReadNames()
+     {
+         List<string> temp = new List<string>();
+         foreach (UnityEditor.EditorBuildSettingsScene S in UnityEditor.EditorBuildSettings.scenes)
+         {
+             if (S.enabled)
+             {
+                 string name = S.path.Substring(S.path.LastIndexOf('/')+1);
+                 name = name.Substring(0,name.Length-6);
+                 temp.Add(name);
+             }
+         }
+         return temp.ToArray();
+     }
+     [UnityEditor.MenuItem("CONTEXT/LevelManager/Update Scene Names")]
+     private static void UpdateNames(UnityEditor.MenuCommand command)
+     {
+         LevelManager context = (LevelManager)command.context;
+         context.scenes = ReadNames();
+     }
+     
+     private void Reset()
+     {
+         scenes = ReadNames();
+     }
+#endif
+
+    public void Start() {
+        int sceneIndex = 1;
+        foreach (string scene in scenes) {
+            Button button = Instantiate(buttonPrefab, gridLayout.transform).GetComponent<Button>();
+            button.onClick.AddListener(() => SelectLevel(scene));
+            Text buttonText = button.GetComponentInChildren<Text>();
+            buttonText.text = sceneIndex++.ToString();
+        }
+    }
+
+    public void SelectLevel(string levelName) {
+        Debug.Log(levelName, this);
+        SceneManager.LoadScene(levelName);
+    }
+}
